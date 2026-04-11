@@ -35,3 +35,36 @@ ai相关知识
 4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+<!-- frontend/src/components/ToolList.vue -->
+<template>
+  <div>
+    <h1>AI Tools</h1>
+    <ul>
+      <li v-for="tool in tools" :key="tool.name">{{ tool.name }} - {{ tool.description }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      tools: []
+    };
+  },
+  created() {
+    axios.get('http://localhost:3001/api/tools')
+      .then(response => {
+        this.tools = response.data;
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
+  }
+};
+</script>
+
+
