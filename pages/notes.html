@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记 - AI 学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🤖 AI 学习资源站</h1>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html">教程</a>
+                <a href="notes.html" class="active">笔记</a>
+                <a href="resources.html">资源</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>📝 学习笔记</h2>
+            <p>学习过程中的思考、问题和解决方案</p>
+        </div>
+
+        <div class="content-section">
+            <h3>2026年4月</h3>
+            <div class="tool-item">
+                <h4>本地大模型初体验</h4>
+                <p>在 RTX 3060 Ti 上成功运行 qwen2.5-coder:7b，总结了一些优化经验...</p>
+                <span style="color: var(--text-light); font-size: 0.9rem;">2026-04-11</span>
+            </div>
+            <div class="tool-item">
+                <h4>VSCode Continue.dev 配置心得</h4>
+                <p>成功将 Ollama 集成到 VSCode，作为代码补全工具使用...</p>
+                <span style="color: var(--text-light); font-size: 0.9rem;">2026-04-10</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>常见问题记录</h3>
+            <div class="tool-item">
+                <h4>Q: 内存不足怎么办？</h4>
+                <p>A: 使用更小的量化版本，如 q3_K_M 或 q3_K_S</p>
+            </div>
+            <div class="tool-item">
+                <h4>Q: 生成速度慢怎么优化？</h4>
+                <p>A: 增加 GPU 层数，调整 num_gpu 参数到 50-60</p>
+            </div>
+            <div class="tool-item">
+                <h4>Q: 模型如何选择？</h4>
+                <p>A: 代码任务推荐 qwen2.5-coder，对话任务推荐 llama2 或 mistral</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
