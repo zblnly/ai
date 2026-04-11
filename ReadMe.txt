@@ -1,0 +1,1 @@
+ollama serve > ollama.log 2>&1 &
