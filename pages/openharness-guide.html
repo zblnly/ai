@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpenHarness完全指南 - 港大开源轻量级AI智能体驾驭框架，1.17万行代码实现Claude Code核心能力，支持43+工具、Ollama本地模型">
+    <meta name="keywords" content="OpenHarness, AI智能体框架, 开源AI框架, Claude Code替代, ohmo,_agent框架, 本地模型, 多智能体协同">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="OpenHarness完全指南 - 港大开源AI智能体框架">
+    <meta property="og:description" content="1.17万行Python代码实现Claude Code核心能力，支持43+工具、Ollama本地模型">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/pages/openharness-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>OpenHarness完全指南 - 港大开源AI智能体框架 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🪼 OpenHarness 完全指南</h2>
+            <p>港大开源轻量级 AI 智能体驾驭框架 | 8.8K+ GitHub Stars</p>
+        </div>
+
+        <div class="content-section">
+            <h3>什么是 OpenHarness？</h3>
+            <p>OpenHarness（简称 <code>oh</code>）是由香港大学数据科学研究院（HKUDS）开源的轻量级 AI 智能体驾驭框架。核心定位是为大语言模型（LLM）提供完整的运行时基础设施，将普通 LLM 快速转化为具备工具调用、记忆管理、安全治理、多智能体协同能力的全能 AI 助手。</p>
+            
+            <h4>核心亮点</h4>
+            <ul>
+                <li>📦 <strong>极致轻量化</strong>：仅用 1.17 万行 Python 代码实现 Claude Code 约 98% 的工具覆盖能力</li>
+                <li>🔌 <strong>模型中立</strong>：支持任意大模型（OpenAI、Claude、DeepSeek、通义千问、Ollama 本地模型等）</li>
+                <li>🔧 <strong>43+ 工具</strong>：文件 IO、Shell 执行、Web 搜索、数据爬取、图表生成、MCP 协议等</li>
+                <li>🛡️ <strong>安全治理</strong>：多级权限控制、Git 自动提交、一键撤销</li>
+                <li>🤝 <strong>多智能体</strong>：subagent 协调、团队协作、后台任务执行</li>
+                <li>💾 <strong>持久记忆</strong>：MEMORY.md 持久化、session resume、auto-compact</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>快速开始</h3>
+            
+            <h4>1. 安装 OpenHarness</h4>
+            <div class="code-block">
+# 一键安装（推荐）
+curl -fsSL https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.sh | bash
+
+# 或使用 pip 安装
+pip install openharness-ai
+
+# 或使用 npm
+npm install -g openharness-ai
+
+# 验证安装
+oh --version
+            </div>
+            
+            <h4>2. 配置模型</h4>
+            <div class="code-block">
+# 交互式配置向导
+oh setup
+
+# 选择你的 provider：Claude / OpenAI / Ollama / DeepSeek / 通义千问等
+            </div>
+            
+            <h4>3. 快速使用</h4>
+            <div class="code-block">
+# 交互式对话模式
+oh
+
+# 单次提问模式
+oh -p "解释这个代码库"
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>支持的模型提供商</h3>
+            <table>
+                <tr>
+                    <th>提供商</th>
+                    <th>说明</th>
+                    <th>推荐场景</th>
+                </tr>
+                <tr>
+                    <td>Claude</td>
+                    <td>Anthropic 官方 API</td>
+                    <td>首选，质量最高</td>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>GPT-4o 系列</td>
+                    <td>通用编程</td>
+                </tr>
+                <tr>
+                    <td>Ollama</td>
+                    <td>本地模型（免费）</td>
+                    <td>零成本、隐私敏感</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek</td>
+                    <td>深度求索 API</td>
+                    <td>高性价比</td>
+                </tr>
+                <tr>
+                    <td>通义千问</td>
+                    <td>阿里云 API</td>
+                    <td>中文优化</td>
+                </tr>
+                <tr>
+                    <td>Kimi</td>
+                    <td>月之暗面 API</td>
+                    <td>长上下文</td>
+                </tr>
+                <tr>
+                    <td>GLM</td>
+                    <td>智谱 AI</td>
+                    <td>免费额度</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>常用命令</h3>
+            
+            <h4>斜杠命令</h4>
+            <ul>
+                <li><code>/diff</code> - 查看当前更改</li>
+                <li><code>/undo</code> - 撤销上一步操作</li>
+                <li><code>/commit</code> - 提交到 Git</li>
+                <li><code>/plan</code> - 计划模式（只读）</li>
+                <li><code>/review</code> - 代码审查</li>
+                <li><code>/cost</code> - 查看使用成本</li>
+                <li><code>/compact</code> - 压缩上下文</li>
+            </ul>
+            
+            <h4>ohmo 个人助手</h4>
+            <p>ohmo 是基于 OpenHarness 的个人 AI 助手应用：</p>
+            <div class="code-block">
+# 初始化 ohmo
+ohmo init
+
+# 查看配置
+ohmo config
+
+# 启动个人助手
+ohmo
+
+# 查看 gateway 状态
+ohmo gateway status
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Git 集成功能</h3>
+            <p>OpenHarness 内置强大的 Git 安全保护：</p>
+            <ul>
+                <li><strong>自动提交</strong>：AI 的每一次编辑都会自动提交到 Git</li>
+                <li><strong>一键撤销</strong>：使用 <code>/undo</code> 立即撤销任何更改</li>
+                <li><strong>差异查看</strong>：使用 <code>/diff</code> 查看变更</li>
+                <li><strong>代码审查</strong>：使用 <code>/review</code> 进行代码审查</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>权限控制</h3>
+            <p>OpenHarness 提供多级权限模式：</p>
+            <ul>
+                <li><strong>Read-only</strong>：仅读取文件，不能修改</li>
+                <li><strong>Auto-edit</strong>：自动编辑，需确认危险操作</li>
+                <li><strong>Full</strong>：完全权限，可执行任意命令</li>
+                <li><strong>Interactive</strong>：交互式确认每一步操作</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>本地离线模式</h3>
+            <p>使用 Ollama 实现完全本地离线的 AI 编程：</p>
+            <div class="code-block">
+# 确保 Ollama 正在运行
+ollama serve
+
+# 使用本地模型
+oh --model ollama/llama3
+oh --model ollama/qwen2.5:7b
+oh --model ollama/codellama:7b
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>多智能体协同</h3>
+            <p>OpenHarness 支持多智能体协调工作：</p>
+            <ul>
+                <li><strong>Subagent</strong>：可以派生子任务代理</li>
+                <li><strong>Team</strong>：注册多个智能体组成团队</li>
+                <li><strong>Background</strong>：后台任务执行</li>
+                <li><strong>Swarm</strong>：智能体群协同</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>与 OpenCode 对比</h3>
+            <table>
+                <tr>
+                    <th>特性</th>
+                    <th>OpenHarness</th>
+                    <th>OpenCode</th>
+                </tr>
+                <tr>
+                    <td>代码量</td>
+                    <td>1.17 万行 Python</td>
+                    <td>51.2 万行 TypeScript</td>
+                </tr>
+                <tr>
+                    <td>GitHub Stars</td>
+                    <td>8.8K+</td>
+                    <td>140K+</td>
+                </tr>
+                <tr>
+                    <td>工具数量</td>
+                    <td>43+</td>
+                    <td>50+</td>
+                </tr>
+                <tr>
+                    <td>本地模型</td>
+                    <td>✅ Ollama</td>
+                    <td>✅ Ollama</td>
+                </tr>
+                <tr>
+                    <td>权限控制</td>
+                    <td>✅ 多级权限</td>
+                    <td>✅ 工具权限</td>
+                </tr>
+                <tr>
+                    <td>多智能体</td>
+                    <td>✅ Subagent</td>
+                    <td>✅ @general</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="https://github.com/HKUDS/OpenHarness" target="_blank">GitHub 仓库</a></li>
+                <li><a href="https://openharness.ai" target="_blank">官网</a></li>
+                <li><a href="https://discord.gg/openharness" target="_blank">Discord 社区</a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

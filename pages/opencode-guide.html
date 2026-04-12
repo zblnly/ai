@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpenCode完全指南 - 2026年最强开源AI编程助手安装配置教程，支持75+模型提供商，包括Claude、GPT、Gemini、本地模型">
+    <meta name="keywords" content="OpenCode, AI编程助手, 开源编程助手, Claude Code替代, AI coding agent, 终端AI, 75+模型">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="OpenCode完全指南 - 2026年最强开源AI编程助手">
+    <meta property="og:description" content="100%开源免费的AI编程助手，140K+ GitHub Stars，支持75+模型提供商">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/pages/opencode-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>OpenCode完全指南 - 2026年开源AI编程助手 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🔧 OpenCode 完全指南</h2>
+            <p>2026 年最强开源 AI 编程助手 | 140K+ GitHub Stars</p>
+        </div>
+
+        <div class="content-section">
+            <h3>什么是 OpenCode？</h3>
+            <p>OpenCode 是一个开源的 AI 编码代理，帮助你在终端、IDE 或桌面端编写代码。它不仅仅是一个聊天机器人，而是一个可以执行命令、搜索代码、调试错误和修改文件的智能编程伙伴。</p>
+            
+            <h4>核心特性</h4>
+            <ul>
+                <li>📱 <strong>多平台</strong>：终端、桌面应用、IDE 扩展</li>
+                <li>🔒 <strong>隐私优先</strong>：不存储任何代码或上下文数据</li>
+                <li>🔗 <strong>会话分享</strong>：可分享会话链接用于参考或调试</li>
+                <li>🔀 <strong>多会话管理</strong>：可同时在同一项目上运行多个 Agent</li>
+                <li>🤖 <strong>多模型支持</strong>：支持 75+ LLM 提供商（Claude、GPT、Gemini、本地模型等）</li>
+                <li>🔌 <strong>LSP 集成</strong>：自动加载正确的语言服务器协议支持</li>
+                <li>🖥️ <strong>原生终端界面</strong>：响应快，支持自定义主题</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>快速开始</h3>
+            
+            <h4>1. 安装 OpenCode（推荐方式）</h4>
+            <div class="code-block">
+# 一键安装（推荐）
+curl -fsSL https://opencode.ai/install | bash
+
+# 使用 npm
+npm install -g opencode-ai
+
+# 使用 Homebrew（macOS/Linux）
+brew install anomalyco/tap/opencode
+
+# 使用 Scoop（Windows）
+scoop install opencode
+
+# 使用 Arch Linux
+sudo pacman -S opencode
+            </div>
+            
+            <h4>2. 下载桌面应用（可选）</h4>
+            <p>访问 <a href="https://opencode.ai/download" target="_blank">OpenCode 下载页面</a> 下载原生桌面应用。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>配置 AI 模型</h3>
+            
+            <h4>方式 A：使用 OpenCode Zen（推荐）</h4>
+            <p>Zen 是 OpenCode 团队精选并测试过的模型列表，专为编码 Agent 优化。</p>
+            <div class="code-block">
+# 运行连接命令
+opencode auth login
+
+# 选择 opencode
+# 访问 opencode.ai/auth
+# 登录并添加账单信息
+# 复制 API 密钥并粘贴
+            </div>
+            
+            <h4>方式 B：使用 Google Gemini（免费）</h4>
+            <p>前往 <a href="https://aistudio.google.com" target="_blank">Google AI Studio</a> 获取免费 API 密钥（250请求/天）。</p>
+            <div class="code-block">
+# 在 OpenCode 中配置
+/opencode
+
+# 输入 /connect 选择 gemini
+# 粘贴你的 API 密钥
+            </div>
+            
+            <h4>方式 C：使用 Ollama 本地模型</h4>
+            <p>配合 Ollama 本地模型，可以实现真正的零成本 AI 编程。</p>
+            <div class="code-block">
+# 先确保 Ollama 正在运行
+ollama serve
+
+# 配置 opencode 使用本地模型
+/opencode
+
+# 输入 /connect 选择 ollama
+# 设置 apiBase 为 http://localhost:11434
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>初始化项目</h3>
+            <p>首次使用建议先运行 <code>/init</code> 命令，让 OpenCode 分析你的项目，自动生成一个 <code>AGENTS.md</code> 文件。</p>
+            <div class="code-block">
+/init
+
+# 这将让 OpenCode 分析你的项目结构
+# 并创建 AGENTS.md 文件
+# 你应该将此文件提交到 Git
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>基本使用</h3>
+            
+            <h4>两种模式切换</h4>
+            <ul>
+                <li><strong>Plan 模式</strong>（只读）：按 <code>Tab</code> 键切换，只做分析和规划，不会动你的代码</li>
+                <li><strong>Build 模式</strong>（默认）：全权限，可以读写文件、执行命令</li>
+            </ul>
+            
+            <h4>常用命令</h4>
+            <div class="code-block">
+# 提问 - 让 AI 解释代码
+How is authentication handled in @packages/api/src/index.ts
+
+# 添加功能 - 让 AI 添加新功能
+Add a user profile page with form validation
+
+# 制定计划 - 只读模式
+/new feature: Add dark mode toggle
+
+# 查看可用命令
+/help
+
+# 切换模型
+/models
+
+# 切换主题
+/themes
+
+# 查看会话历史
+opencode sessions list
+
+# 撤销修改
+/undo
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>免费模型推荐</h3>
+            <table>
+                <tr>
+                    <th>模型</th>
+                    <th>适用场景</th>
+                    <th>成本</th>
+                </tr>
+                <tr>
+                    <td>OpenCode Zen</td>
+                    <td>日常编程，综合能力强</td>
+                    <td>按量付费</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.5 Flash</td>
+                    <td>免费额度250请求/天</td>
+                    <td>免费</td>
+                </tr>
+                <tr>
+                    <td>qwen2.5-coder</td>
+                    <td>代码生成，本地离线</td>
+                    <td>免费</td>
+                </tr>
+                <tr>
+                    <td>Groq Llama</td>
+                    <td>高速推理</td>
+                    <td>免费</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>VSCode 中使用</h3>
+            <p>OpenCode 可以集成到 VSCode 中使用：</p>
+            <ol>
+                <li>在 VSCode 中打开终端</li>
+                <li>运行 <code>opencode</code></li>
+                <li>按 <code>Cmd+Esc</code>（Mac）或 <code>Ctrl+Esc</code>（Win/Linux）在分屏中打开</li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>注意事项</h3>
+            <ul>
+                <li>⚠️ <strong>2026年限制</strong>：Anthropic 在 2026 年 1 月阻止了 OpenCode 使用 Claude 模型</li>
+                <li>建议使用 GPT-4o 或 Gemini 2.5 Pro 作为替代</li>
+                <li>建议将 <code>AGENTS.md</code> 文件提交到 Git，帮助 AI 理解项目规范</li>
+                <li>首次使用建议使用 <code>/init</code> 初始化项目</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>学习资源</h3>
+            <ul>
+                <li><a href="https://opencode.ai" target="_blank">OpenCode 官网</a></li>
+                <li><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub 仓库</a></li>
+                <li><a href="https://opencode.ai/docs/zh-cn/" target="_blank">官方文档</a></li>
+                <li><a href="https://opencode.ai/discord" target="_blank">Discord 社区</a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
