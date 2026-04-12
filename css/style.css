@@ -576,6 +576,350 @@ footer a {
     text-decoration: underline;
 }
 
+/* Prompt Engineering Guide */
+.guide-intro {
+    padding: 1rem 0;
+}
+
+.guide-intro p {
+    margin-bottom: 1rem;
+}
+
+.key-point {
+    background: rgba(37, 99, 235, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.key-point h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.key-point li {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+.framework-box {
+    padding: 1rem 0;
+}
+
+.framework-box > p {
+    margin-bottom: 1rem;
+}
+
+.framework-table {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.framework-table table {
+    min-width: 600px;
+}
+
+.技巧-card {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.技巧-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.compare-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.compare-item {
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--card-bg);
+}
+
+.compare-item .bad {
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.compare-item .good {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.iter-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.iter-steps .step {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.iter-steps .step-num {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.case-box {
+    padding: 1rem 0;
+}
+
+.case-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.mistake-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #ef4444;
+}
+
+.mistake-item h4 {
+    color: #ef4444;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.mistake-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.article-card {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.article-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.article-card p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.article-card .desc {
+    margin-bottom: 0.75rem;
+}
+
+.plan-table {
+    overflow-x: auto;
+}
+
+.plan-table table {
+    min-width: 600px;
+}
+
+/* Continue.dev Guide */
+.intro-box {
+    padding: 1rem 0;
+}
+
+.intro-box > p {
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.step-box {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.step-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.step-box ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.step-box li {
+    margin-bottom: 0.5rem;
+}
+
+.download-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.feature-card {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.feature-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.scenario-box {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.scenario-box h4 {
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.tip-card {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.tip-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.tip-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.tip-card ul {
+    list-style: none;
+    font-size: 0.85rem;
+}
+
+.tip-card li {
+    margin-bottom: 0.25rem;
+}
+
+.tip-card code {
+    background: var(--text-color);
+    color: white;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.config-box {
+    padding: 1rem 0;
+}
+
+.config-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.faq-item h4 {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.resource-links ul {
+    list-style: none;
+}
+
+.resource-links li {
+    margin-bottom: 0.75rem;
+}
+
+.resource-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.resource-links a:hover {
+    text-decoration: underline;
+}
+
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
