@@ -400,6 +400,132 @@ footer a {
     margin-bottom: 1rem;
 }
 
+/* Learning Path */
+.path-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.path-step {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.path-step .step-num {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.3;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+}
+
+.path-step h4 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.path-step p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.path-step .duration {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.phase-content h4 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.phase-content h4:first-child {
+    margin-top: 0;
+}
+
+.learning-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.learning-list li {
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+    background: var(--bg-color);
+}
+
+.learning-list li strong {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.learning-list li p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.resource-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.resource-card {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.resource-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.resource-card ul {
+    list-style: none;
+}
+
+.resource-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-card a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.resource-card a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI编程学习路线 - 从零开始学习AI辅助编程，包含Prompt工程、VSCode配置、Cursor、Continue.dev、OpenCode等工具的系统学习路径">
+    <meta name="keywords" content="AI编程, Prompt工程, AI辅助编程, Continue.dev, Cursor, OpenCode, 学习路线, VSCode, AI代码助手">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="AI编程学习路线 - 从入门到实战">
+    <meta property="og:description" content="系统学习AI辅助编程，从工具配置到实战项目">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/ai-coding-path.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>AI编程学习路线 | AI辅助编程入门到实战 - AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>💻 AI编程学习路线</h2>
+            <p>从零开始系统学习AI辅助编程，成为AI时代的高效开发者</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📍 学习路径总览</h3>
+            <div class="path-overview">
+                <div class="path-step">
+                    <span class="step-num">01</span>
+                    <h4>入门阶段</h4>
+                    <p>掌握Prompt基础，体验AI编程</p>
+                    <span class="duration">1-2周</span>
+                </div>
+                <div class="path-step">
+                    <span class="step-num">02</span>
+                    <h4>工具配置</h4>
+                    <p>配置开发环境，选型工具</p>
+                    <span class="duration">2-3周</span>
+                </div>
+                <div class="path-step">
+                    <span class="step-num">03</span>
+                    <h4>进阶实战</h4>
+                    <p>项目实践，熟练使用AI</p>
+                    <span class="duration">3-4周</span>
+                </div>
+                <div class="path-step">
+                    <span class="step-num">04</span>
+                    <h4>高级应用</h4>
+                    <p>自动化工作流，AI Agent</p>
+                    <span class="duration">持续学习</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 阶段一：入门阶段（1-2周）</h3>
+            <div class="phase-content">
+                <h4>目标</h4>
+                <p>了解AI辅助编程概念，掌握基础Prompt技巧，能够使用在线AI服务完成简单编程任务。</p>
+                
+                <h4>学习内容</h4>
+                <ul class="learning-list">
+                    <li>
+                        <strong>AI辅助编程基础</strong>
+                        <p>了解什么是AI编程，AI能做什么、不能做什么</p>
+                    </li>
+                    <li>
+                        <strong>Prompt工程入门</strong>
+                        <p>学习编写有效的提示词，包括：角色设定、任务描述、输出格式约束</p>
+                        <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" class="resource-link">→ OpenAI Prompt指南</a>
+                    </li>
+                    <li>
+                        <strong>在线AI服务体验</strong>
+                        <p>注册 ChatGPT/Claude/Gemini 账号，体验AI代码生成</p>
+                    </li>
+                    <li>
+                        <strong>基础编程任务</strong>
+                        <p>让AI帮助：代码注释、函数文档、简单函数实现、bug修复</p>
+                    </li>
+                </ul>
+                
+                <h4>实践任务</h4>
+                <ul>
+                    <li>使用ChatGPT生成一个TODO应用</li>
+                    <li>让Claude帮你写一个API接口文档</li>
+                    <li>用AI解释一段你不熟悉的代码</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🛠️ 阶段二：工具配置（2-3周）</h3>
+            <div class="phase-content">
+                <h4>目标</h4>
+                <p>完成本地开发环境配置，能够在IDE中流畅使用AI辅助编程工具。</p>
+                
+                <h4>学习内容</h4>
+                <ul class="learning-list">
+                    <li>
+                        <strong>本地大模型部署</strong>
+                        <p>安装Ollama，下载 qwen2.5-coder 或其他代码模型</p>
+                        <a href="ollama-guide.html" class="resource-link">→ Ollama配置指南</a>
+                    </li>
+                    <li>
+                        <strong>VSCode + Continue.dev</strong>
+                        <p>安装 Continue.dev 扩展，配置本地Ollama模型</p>
+                        <a href="https://continue.dev" target="_blank" class="resource-link">→ Continue.dev官网</a>
+                    </li>
+                    <li>
+                        <strong>Cursor编辑器</strong>
+                        <p>下载并体验 Cursor，熟悉 AI 补全、对话、编辑功能</p>
+                        <a href="https://cursor.sh" target="_blank" class="resource-link">→ Cursor官网</a>
+                    </li>
+                    <li>
+                        <strong>OpenCode开源助手</strong>
+                        <p>体验最强开源AI编程助手，支持75+模型</p>
+                        <a href="opencode-guide.html" class="resource-link">→ OpenCode配置指南</a>
+                    </li>
+                </ul>
+                
+                <h4>IDE推荐配置</h4>
+                <table>
+                    <tr>
+                        <th>使用场景</th>
+                        <th>推荐工具</th>
+                        <th>推荐模型</th>
+                        <th>特点</th>
+                    </tr>
+                    <tr>
+                        <td>日常开发</td>
+                        <td>Cursor</td>
+                        <td>Claude 4 / GPT-4</td>
+                        <td>开箱即用体验好</td>
+                    </tr>
+                    <tr>
+                        <td>VSCode用户</td>
+                        <td>Continue.dev</td>
+                        <td>qwen2.5-coder</td>
+                        <td>深度集成生态丰富</td>
+                    </tr>
+                    <tr>
+                        <td>隐私敏感</td>
+                        <td>OpenCode</td>
+                        <td>本地模型</td>
+                        <td>数据本地处理</td>
+                    </tr>
+                    <tr>
+                        <td>免费使用</td>
+                        <td>CodeFuse</td>
+                        <td>专有模型</td>
+                        <td>免费中文优化</td>
+                    </tr>
+                </table>
+                
+                <h4>实践任务</h4>
+                <ul>
+                    <li>在VSCode中配置Continue.dev</li>
+                    <li>用Ollama运行本地模型</li>
+                    <li>用AI补全功能完成一个项目模块</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>⚔️ 阶段三：进阶实战（3-4周）</h3>
+            <div class="phase-content">
+                <h4>目标</h4>
+                <p>熟练使用AI辅助编程，显著提升开发效率，能够独立完成中等复杂度项目。</p>
+                
+                <h4>学习内容</h4>
+                <ul class="learning-list">
+                    <li>
+                        <strong>高效Prompt技巧</strong>
+                        <p>学习：CRISPE提示框架、思维链提示、上下文管理</p>
+                    </li>
+                    <li>
+                        <strong>项目级AI应用</strong>
+                        <p>用AI完成：数据库设计、API设计、测试用例编写</p>
+                    </li>
+                    <li>
+                        <strong>代码审查与优化</strong>
+                        <p>让AI审查代码、提出优化建议、重构代码</p>
+                    </li>
+                    <li>
+                        <strong>调试与问题排查</strong>
+                        <p>用AI分析错误日志、定位bug、提供修复方案</p>
+                    </li>
+                    <li>
+                        <strong>文档自动化</strong>
+                        <p>用AI自动生成API文档、README、代码注释</p>
+                    </li>
+                </ul>
+                
+                <h4>进阶技巧</h4>
+                <div class="code-block">
+# 高效Prompt示例：让AI帮你设计API
+你是一位资深后端架构师。请帮我设计一个用户管理系统的RESTful API：
+
+1. 包含功能：用户注册、登录、信息查询、信息修改、密码重置
+2. 使用 Node.js + Express + MySQL
+3. 请输出：API路径设计、请求参数、响应格式、数据库表结构
+4. 代码要求符合最佳实践，包含错误处理
+                </div>
+                
+                <div class="code-block">
+# 调试Prompt示例：让AI帮你定位bug
+我遇到了一个Node.js运行时错误，错误信息如下：
+[Error: Cannot read property 'name' of undefined at UserService.getProfile (user.service.js:45)]
+
+这是相关代码片段（第40-50行）：
+[代码片段]
+
+请分析可能的原因，并提供修复方案。
+                </div>
+                
+                <h4>实践任务</h4>
+                <ul>
+                    <li>用AI设计并实现一个完整的小项目</li>
+                    <li>让AI帮你重构一个旧项目</li>
+                    <li>用AI完成单元测试编写（覆盖率>80%）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🤖 阶段四：高级应用（持续学习）</h3>
+            <div class="phase-content">
+                <h4>目标</h4>
+                <p>构建自动化工作流，使用AI Agent完成复杂任务，形成个人AI开发工作流。</p>
+                
+                <h4>学习内容</h4>
+                <ul class="learning-list">
+                    <li>
+                        <strong>AI Agent原理</strong>
+                        <p>了解Agent架构：感知→思考→行动→反馈循环</p>
+                        <a href="openharness-guide.html" class="resource-link">→ OpenHarness AI框架</a>
+                    </li>
+                    <li>
+                        <strong>工作流自动化</strong>
+                        <p>使用AI自动完成：需求分析→代码实现→测试→文档全流程</p>
+                    </li>
+                    <li>
+                        <strong>多模型协作</strong>
+                        <p>组合使用：GPT写代码 + Claude审查 + 本地模型处理隐私数据</p>
+                    </li>
+                    <li>
+                        <strong>RAG知识库</strong>
+                        <p>构建私有知识库，让AI基于你的文档回答问题</p>
+                    </li>
+                    <li>
+                        <strong>模型微调</strong>
+                        <p>在自己的代码数据集上微调专属模型</p>
+                    </li>
+                </ul>
+                
+                <h4>高级工具</h4>
+                <table>
+                    <tr>
+                        <th>工具</th>
+                        <th>用途</th>
+                        <th>学习难度</th>
+                    </tr>
+                    <tr>
+                        <td>OpenHarness</td>
+                        <td>AI Agent开发</td>
+                        <td>中</td>
+                    </tr>
+                    <tr>
+                        <td>LangChain</td>
+                        <td>LLM应用开发</td>
+                        <td>高</td>
+                    </tr>
+                    <tr>
+                        <td>AutoGPT</td>
+                        <td>自主AI Agent</td>
+                        <td>中</td>
+                    </tr>
+                    <tr>
+                        <td>LlamaIndex</td>
+                        <td>RAG知识库</td>
+                        <td>中</td>
+                    </tr>
+                </table>
+                
+                <h4>实践任务</h4>
+                <ul>
+                    <li>构建基于私有文档的问答系统</li>
+                    <li>实现一个自动化代码审查工作流</li>
+                    <li>尝试模型微调训练</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📚 推荐资源</h3>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>📖 文档教程</h4>
+                    <ul>
+                        <li><a href="https://continue.dev/docs" target="_blank">Continue.dev官方文档</a></li>
+                        <li><a href="https://github.com/continue-dev/continue" target="_blank">Continue.dev GitHub</a></li>
+                        <li><a href="ollama-guide.html">Ollama中文配置指南</a></li>
+                        <li><a href="opencode-guide.html">OpenCode配置指南</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>🎓 在线课程</h4>
+                    <ul>
+                        <li><a href="https://www.deeplearning.ai/short-courses/" target="_blank">DeepLearning.AI免费课程</a></li>
+                        <li><a href="https://learnprompting.org/zh-CN" target="_blank">Prompt Engineering</a></li>
+                        <li><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank">AI for Everyone</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h4>🛠️ 实践项目</h4>
+                    <ul>
+                        <li><a href="https://github.com/topics/ai-powered" target="_blank">AI开源项目</a></li>
+                        <li><a href="https://github.com/continue-dev/awesome-ai-agents" target="_blank">Awesome AI Agents</a></li>
+                        <li><a href="https://github.com/ollama/ollama" target="_blank">Ollama GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>⏱️ 学习时间建议</h3>
+            <table>
+                <tr>
+                    <th>每日学习时间</th>
+                    <th>达到目标</th>
+                    <th>预计周期</th>
+                </tr>
+                <tr>
+                    <td>30分钟</td>
+                    <td>入门，了解AI编程概念</td>
+                    <td>2-3周</td>
+                </tr>
+                <tr>
+                    <td>1小时</td>
+                    <td>配置工具，完成简单任务</td>
+                    <td>1-2个月</td>
+                </tr>
+                <tr>
+                    <td>2小时</td>
+                    <td>熟练使用，独立做项目</td>
+                    <td>3-4个月</td>
+                </tr>
+                <tr>
+                    <td>3小时以上</td>
+                    <td>高级应用，自动化工作流</td>
+                    <td>6个月以上</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+            <a href="ai-news.html" class="btn" style="margin-left: 1rem;">查看AI动态 →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
