@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 学习资源站</title>
+    <meta name="description" content="AI学习资源站 - 汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等">
+    <meta name="keywords" content="AI, 人工智能, 大模型, Ollama, Prompt工程, AI编程, 机器学习, 深度学习">
+    <meta name="author" content="AI学习者">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI学习资源站">
+    <meta property="og:description" content="汇集AI领域的学习心得、工具推荐和经验总结">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI学习资源站">
+    <meta name="twitter:description" content="汇集AI领域的学习心得、工具推荐和经验总结">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <title>AI学习资源站 | AI工具、教程、笔记</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>🤖 AI 学习资源站</h1>
-            <nav>
-                <a href="index.html" class="active">首页</a>
-                <a href="pages/tools.html">AI 工具</a>
+            <a href="#main-content" class="skip-link">跳到主要内容</a>
+            <h1>🤖 AI学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="index.html" class="active" aria-current="page">首页</a>
+                <a href="pages/tools.html">AI工具</a>
                 <a href="pages/tutorials.html">教程</a>
                 <a href="pages/notes.html">笔记</a>
                 <a href="pages/resources.html">资源</a>
@@ -20,21 +45,21 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content" role="main">
         <section class="hero">
-            <h2>欢迎来到 AI 学习资源站</h2>
-            <p>这里汇集了我在 AI 领域的学习心得、工具推荐和经验总结</p>
+            <h2>欢迎来到AI学习资源站</h2>
+            <p>这里汇集了我在AI领域的学习心得、工具推荐和经验总结</p>
         </section>
 
         <section class="cards">
             <div class="card">
-                <h3>🛠️ AI 工具</h3>
-                <p>本地大模型、Prompt 工程、AI 辅助编程工具</p>
+                <h3>🛠️ AI工具</h3>
+                <p>本地大模型、Prompt工程、AI辅助编程工具</p>
                 <a href="pages/tools.html" class="btn">查看详情 →</a>
             </div>
             <div class="card">
                 <h3>📚 教程</h3>
-                <p>从零开始的 AI 学习路径和实战指南</p>
+                <p>从零开始的AI学习路径和实战指南</p>
                 <a href="pages/tutorials.html" class="btn">查看详情 →</a>
             </div>
             <div class="card">
@@ -52,19 +77,39 @@
         <section class="recent">
             <h3>最近更新</h3>
             <ul id="recent-list">
-                <li><a href="pages/ollama-guide.html">本地大模型运行指南 - Ollama 配置</a></li>
-                <li><a href="#">VSCode Continue.dev 集成</a></li>
-                <li><a href="#">RTX 3060 Ti 性能优化</a></li>
+                <li><a href="pages/ollama-guide.html">本地大模型运行指南 - Ollama配置</a></li>
+                <li><a href="#">VSCode Continue.dev集成</a></li>
+                <li><a href="#">RTX 3060 Ti性能优化</a></li>
             </ul>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI学习资源站",
+        "description": "汇集AI领域的学习心得、工具推荐和经验总结",
+        "url": "https://your-domain.com",
+        "author": {
+            "@type": "Person",
+            "name": "AI学习者"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "人工智能",
+            "description": "机器学习、深度学习、大语言模型"
+        }
+    }
+    </script>
+    
+    <script src="js/main.js" defer></script>
 </body>
 </html>

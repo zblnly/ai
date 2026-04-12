@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资源 - AI 学习资源站</title>
+    <meta name="description" content="AI学习资源 - 推荐有价值的教程、文档、论文和开源项目，包括Ollama、Continue.dev、Hugging Face、Fast.ai、LangChain等">
+    <meta name="keywords" content="AI资源, 学习资源, 教程文档, 开源项目, Hugging Face, Fast.ai, LangChain, LocalAI">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="学习资源 - AI学习资源站">
+    <meta property="og:description" content="有价值的教程、文档、论文和开源项目推荐">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/resources.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>AI学习资源 - 教程、文档、论文、开源项目 | AI学习资源站</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
             <h1>🤖 AI 学习资源站</h1>
-            <nav>
+            <nav aria-label="主导航">
                 <a href="../index.html">首页</a>
                 <a href="tools.html">AI 工具</a>
                 <a href="tutorials.html">教程</a>
                 <a href="notes.html">笔记</a>
-                <a href="resources.html" class="active">资源</a>
+                <a href="resources.html" class="active" aria-current="page">资源</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content" role="main">
         <div class="page-header">
             <h2>📦 学习资源</h2>
             <p>有价值的教程、文档、论文和开源项目</p>
@@ -73,6 +86,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html>

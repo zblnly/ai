@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教程 - AI 学习资源站</title>
+    <meta name="description" content="AI教程 - 从零开始的AI学习路径和实战指南，包括入门指南、Prompt工程、本地部署大模型、AI辅助编程、模型微调、RAG技术">
+    <meta name="keywords" content="AI教程, AI学习, Prompt工程, 本地部署, Ollama, 模型微调, Fine-tuning, RAG, 检索增强">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="AI教程 - AI学习路径指南 - AI学习资源站">
+    <meta property="og:description" content="从零开始的AI学习路径和实战指南">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/tutorials.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>AI教程 - 从零开始的AI学习路径 | AI学习资源站</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
             <h1>🤖 AI 学习资源站</h1>
-            <nav>
+            <nav aria-label="主导航">
                 <a href="../index.html">首页</a>
                 <a href="tools.html">AI 工具</a>
-                <a href="tutorials.html" class="active">教程</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
                 <a href="notes.html">笔记</a>
                 <a href="resources.html">资源</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content" role="main">
         <div class="page-header">
             <h2>📚 AI 教程</h2>
             <p>从零开始的 AI 学习路径和实战指南</p>
@@ -44,6 +57,16 @@
                 <h4>本地部署大模型</h4>
                 <p>从 0 开始配置 Ollama，运行本地大语言模型</p>
                 <a href="ollama-guide.html" class="btn">查看详情 →</a>
+            </div>
+            <div class="tool-item">
+                <h4>OpenCode AI 编程助手</h4>
+                <p>2026年最强开源AI编程助手，140K+ GitHub Stars，支持75+模型</p>
+                <a href="opencode-guide.html" class="btn">查看详情 →</a>
+            </div>
+            <div class="tool-item">
+                <h4>OpenHarness AI 框架</h4>
+                <p>港大开源轻量级AI智能体框架，1.17万行代码实现Claude Code核心能力</p>
+                <a href="openharness-guide.html" class="btn">查看详情 →</a>
             </div>
             <div class="tool-item">
                 <h4>AI 辅助编程</h4>
@@ -70,6 +93,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html>
