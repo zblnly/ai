@@ -1355,6 +1355,132 @@ footer a {
     margin-top: 0.5rem;
 }
 
+/* OpenCode Updated Guide Styles */
+.feature-highlight {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.highlight-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.highlight-item .num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.highlight-item .label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.workflow-box {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.mode-item {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.mode-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.mode-item .trigger {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.tips-category {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.tips-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.tips-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+.tip-item .bad { color: #ef4444; }
+.tip-item .good { color: #10b981; }
+
+.note {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.resource-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.resource-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.resource-item ul {
+    list-style: none;
+}
+
+.resource-item li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
