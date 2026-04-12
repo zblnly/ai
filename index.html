@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI学习资源站 - 汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等">
-    <meta name="keywords" content="AI, 人工智能, 大模型, Ollama, Prompt工程, AI编程, 机器学习, 深度学习">
+    <meta name="keywords" content="AI, 人工智能, 大模型, Ollama, Prompt工程, AI编程, 机器学习, 深度学习, Continue.dev, OpenCode">
     <meta name="author" content="AI学习者">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="AI学习资源站">
-    <meta property="og:description" content="汇集AI领域的学习心得、工具推荐和经验总结">
+    <meta property="og:title" content="AI学习资源站 - AI工具、教程、笔记">
+    <meta property="og:description" content="汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-domain.com">
     <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="AI学习资源站">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI学习资源站">
+    <meta name="twitter:title" content="AI学习资源站 - AI工具、教程、笔记">
     <meta name="twitter:description" content="汇集AI领域的学习心得、工具推荐和经验总结">
+    <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
     
     <title>AI学习资源站 | AI工具、教程、笔记</title>
     <link rel="stylesheet" href="css/style.css">
@@ -118,17 +124,41 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "AI学习资源站",
-        "description": "汇集AI领域的学习心得、工具推荐和经验总结",
+        "description": "汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等",
         "url": "https://your-domain.com",
         "author": {
             "@type": "Person",
             "name": "AI学习者"
         },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI学习资源站",
+            "url": "https://your-domain.com"
+        },
         "about": {
             "@type": "Thing",
             "name": "人工智能",
-            "description": "机器学习、深度学习、大语言模型"
+            "description": "机器学习、深度学习、大语言模型、AI辅助编程、Prompt工程"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://your-domain.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://your-domain.com/"
+        }]
     }
     </script>
     
