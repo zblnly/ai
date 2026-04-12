@@ -920,6 +920,324 @@ footer a {
     text-decoration: underline;
 }
 
+/* Guide Page */
+.check-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.check-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+
+.check-list li:last-child {
+    border-bottom: none;
+}
+
+.path-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.path-item {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 120px;
+    flex: 1;
+    max-width: 150px;
+}
+
+.path-item .path-step {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0.4;
+    margin-bottom: 0.25rem;
+}
+
+.path-item h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.path-item p {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.path-item .time {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.path-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.info-card {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card li {
+    padding: 0.4rem 0;
+}
+
+.info-card li::before {
+    content: "• ";
+    color: var(--primary-color);
+}
+
+.tool-compare {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tool-option {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.tool-option h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tool-option .tag {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+}
+
+.tool-option p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.tip-note {
+    background: rgba(37, 99, 235, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.tips-box {
+    background: var(--bg-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.tips-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.tips-box ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.tips-box li {
+    margin-bottom: 0.5rem;
+}
+
+.link-more {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.link-more a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.practice-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.practice-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.practice-item h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.practice-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.faq-simple {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.faq-q {
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.faq-a {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.next-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.next-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.next-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.next-item ul {
+    list-style: none;
+}
+
+.next-item li {
+    margin-bottom: 0.5rem;
+}
+
+.next-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.next-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Tutorial Page */
+.tutorial-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.tutorial-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.tutorial-item h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.tutorial-item p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-item .tag {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-advance {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    opacity: 0.7;
+}
+
+.advance-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+}
+
+.advance-item h4 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.advance-item p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.coming-soon {
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
