@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agent Harness完全指南 - 理解Harness架构与OpenHarness框架，AI智能体的基础设施">
+    <meta name="keywords" content="Agent Harness, OpenHarness, AI Agent框架, 智能体架构, 多智能体协同">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Agent Harness完全指南">
+    <meta property="og:description" content="从零理解Harness架构与OpenHarness框架">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/harness-agent.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    
+    <title>Agent Harness完全指南 | AI智能体基础设施 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="guide.html">入门</a>
+                <a href="tools.html">工具</a>
+                <a href="tutorials.html" class="active">教程</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>⚙️ Agent Harness完全指南</h2>
+            <p>理解AI智能体的基础设施，从概念到实践</p>
+        </div>
+
+        <div class="content-section">
+            <h3>🤔 什么是Agent Harness？</h3>
+            
+            <div class="concept-box">
+                <p>先看一个公式：</p>
+                <div class="key-formula">
+                    <strong>Agent = Model + Harness</strong>
+                </div>
+                
+                <p>模型本身只是"脑子"，会思考但没手没脚。要让它帮你改代码、查文件、跑脚本、上网搜索……就得给它装上一整套工具链和安全边界。</p>
+                <p><strong>Harness就是这套"马具"</strong>——让大模型变成真正能干活的黑衣宰相。</p>
+            </div>
+            
+            <div class="concept-box">
+                <h4>模型 vs Harness 的分工</h4>
+                <div class="compare-table">
+                    <table>
+                        <tr>
+                            <th>部分</th>
+                            <th>负责</th>
+                            <th>例子</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Model（模型）</strong></td>
+                            <td>思考、推理、决策</td>
+                            <td>理解需求、规划步骤、选择工具</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Harness（框架）</strong></td>
+                            <td>执行、安全、记忆、边界</td>
+                            <td>调用工具、检查权限、保存上下文</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🏗️ Harness的核心组成</h3>
+            
+            <div class="component-list">
+                <div class="component-item">
+                    <h4>🔧 Tools（工具）</h4>
+                    <p>让模型能够读写文件、搜索、执行命令、访问网页、调用MCP等。OpenHarness提供43+工具。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>📚 Knowledge（知识）</h4>
+                    <p>通过skills、CLAUDE.md、MEMORY.md等机制，把外部知识装载进系统。按需加载。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>👁️ Observation（观察）</h4>
+                    <p>让模型看到git diff、错误日志、文件状态等执行反馈，不只是"想"，还能"看"。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>⚡ Action（行动）</h4>
+                    <p>执行工具调用、文件操作、命令执行等实际行动，而不是只返回文本。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>🛡️ Permissions（权限）</h4>
+                    <p>安全边界：执行前权限检查、敏感操作确认、危险命令拦截。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>🧠 Memory（记忆）</h4>
+                    <p>长期运行时的状态保存、会话恢复、上下文压缩、断点续聊。</p>
+                </div>
+                
+                <div class="component-item">
+                    <h4>👥 Multi-Agent（多智能体）</h4>
+                    <p>主Agent派发子任务、团队协调、后台任务管理、并行执行。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🔄 Agent Loop 核心循环</h3>
+            
+            <div class="loop-flow">
+                <div class="loop-step">
+                    <span class="step-num">1</span>
+                    <p>用户输入</p>
+                </div>
+                <div class="loop-arrow">→</div>
+                <div class="loop-step">
+                    <span class="step-num">2</span>
+                    <p>模型推理</p>
+                </div>
+                <div class="loop-arrow">→</div>
+                <div class="loop-step">
+                    <span class="step-num">3</span>
+                    <p>工具调用</p>
+                </div>
+                <div class="loop-arrow">→</div>
+                <div class="loop-step">
+                    <span class="step-num">4</span>
+                    <p>执行验证</p>
+                </div>
+                <div class="loop-arrow">→</div>
+                <div class="loop-step">
+                    <span class="step-num">5</span>
+                    <p>结果返回</p>
+                </div>
+                <div class="loop-arrow">→</div>
+                <div class="loop-step">
+                    <span class="step-num">6</span>
+                    <p>循环直到完成</p>
+                </div>
+            </div>
+            
+            <div class="code-block">
+# 伪代码
+while True:
+    response = await api.stream(messages, tools)
+    
+    if response.stop_reason != "tool_use":
+        break  # 模型干完了
+    
+    # 执行工具
+    for tool_call in response.tool_uses:
+        # 权限检查 → 执行 → 返回结果
+        result = executor.run(tool_call)
+        messages.append(result)
+</div>
+        </div>
+
+        <div class="content-section">
+            <h3>🐣 OpenHarness 介绍</h3>
+            
+            <div class="intro-box">
+                <p><strong>OpenHarness</strong> 是香港大学数据科学研究院（HKUDS）开源的轻量级AI Agent框架。</p>
+                
+                <div class="feature-highlight">
+                    <ul>
+                        <li>📅 2026年4月1日发布</li>
+                        <li>📝 纯Python 3.10+ 实现</li>
+                        <li>📊 仅 11,733 行代码（Claude Code的1/44）</li>
+                        <li>⭐ GitHub 5K+ Stars</li>
+                        <li>📜 MIT开源协议</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="compare-box">
+                <h4>与Claude Code对比</h4>
+                <table>
+                    <tr>
+                        <th>对比项</th>
+                        <th>OpenHarness</th>
+                        <th>Claude Code</th>
+                    </tr>
+                    <tr>
+                        <td>代码规模</td>
+                        <td>11,733行</td>
+                        <td>512,000+行</td>
+                    </tr>
+                    <tr>
+                        <td>编程语言</td>
+                        <td>Python</td>
+                        <td>TypeScript</td>
+                    </tr>
+                    <tr>
+                        <td>开源</td>
+                        <td>✅ MIT</td>
+                        <td>❌ 闭源</td>
+                    </tr>
+                    <tr>
+                        <td>多模型</td>
+                        <td>✅ 支持</td>
+                        <td>❌ 仅Claude</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>⚡ OpenHarness 快速开始</h3>
+            
+            <div class="step-box">
+                <h4>1. 一键安装</h4>
+                <div class="code-block">
+# Linux/macOS/WSL
+curl -fsSL https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.sh | bash
+
+# 或者用pip
+pip install openharness-ai
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>2. 配置模型</h4>
+                <div class="code-block">
+# 交互式配置（推荐）
+oh setup
+
+# 或者手动设置环境变量
+export ANTHROPIC_API_KEY=sk-...
+export ANTHROPIC_MODEL=claude-3.5-sonnet
+                </div>
+                <p class="support-model">支持：Claude / OpenAI / Codex / Moonshot(Kimi) / 通义千问 / GLM 等</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>3. 启动使用</h4>
+                <div class="code-block">
+# 交互模式
+oh
+
+# 单次执行
+oh -p "解释这个代码库"
+
+# JSON输出
+oh -p "列出main.py中的函数" --output-format json
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🎯 OpenHarness 核心功能</h3>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔄 Agent Loop</h4>
+                    <p>流式工具调用、指数退避重试、并行执行、实时Token计数与成本追踪</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🛠️ 43+ Tools</h4>
+                    <p>文件I/O、搜索、Notebook编辑、子智能体协同、任务管理、MCP接入</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📚 Skills按需加载</h4>
+                    <p>Markdown格式技能文件，放入skills/目录自动加载</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🧠 Memory</h4>
+                    <p>上下文自动压缩、会话恢复、断点续聊</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🛡️ 权限控制</h4>
+                    <p>执行前权限检查、敏感操作确认、危险命令拦截</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>👥 Multi-Agent</h4>
+                    <p>子Agent生成、团队注册、后台任务管理、并行执行</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🏢 系统架构</h3>
+            
+            <div class="arch-list">
+                <div class="arch-item">
+                    <h4>engine/</h4>
+                    <p>Agent Loop核心 - query → stream → tool-call → loop</p>
+                </div>
+                <div class="arch-item">
+                    <h4>tools/</h4>
+                    <p>43+工具注册与执行</p>
+                </div>
+                <div class="arch-item">
+                    <h4>skills/</h4>
+                    <p>按需加载知识</p>
+                </div>
+                <div class="arch-item">
+                    <h4>plugins/</h4>
+                    <p>插件系统，兼容Claude Code</p>
+                </div>
+                <div class="arch-item">
+                    <h4>permissions/</h4>
+                    <p>权限控制</p>
+                </div>
+                <div class="arch-item">
+                    <h4>hooks/</h4>
+                    <p>生命周期钩子</p>
+                </div>
+                <div class="arch-item">
+                    <h4>memory/</h4>
+                    <p>会话管理</p>
+                </div>
+                <div class="arch-item">
+                    <h4>coordinator/</h4>
+                    <p>多Agent协调</p>
+                </div>
+                <div class="arch-item">
+                    <h4>ui/</h4>
+                    <p>React终端UI</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🔌 ohmo 个人智能体</h3>
+            
+            <p>ohmo 是基于OpenH构建的个人AI助手app，可以接入Telegram/Slack/Discord/飞书：</p>
+            
+            <div class="code-block">
+# 初始化
+ohmo init
+
+# 配置渠道
+ohmo config
+
+# 运行
+ohmo
+</div>
+            
+            <p class="note">ohmo可以7×24小时持续运行，适合自动化任务。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 同类框架对比</h3>
+            
+            <table>
+                <tr>
+                    <th>框架</th>
+                    <th>代码量</th>
+                    <th>语言</th>
+                    <th>开源</th>
+                    <th>特点</th>
+                </tr>
+                <tr>
+                    <td>OpenHarness</td>
+                    <td>11,733行</td>
+                    <td>Python</td>
+                    <td>✅ MIT</td>
+                    <td>轻量、多模型</td>
+                </tr>
+                <tr>
+                    <td>Claude Code</td>
+                    <td>512,000+行</td>
+                    <td>TypeScript</td>
+                    <td>❌ 闭源</td>
+                    <td>功能最强</td>
+                </tr>
+                <tr>
+                    <td>OpenCode</td>
+                    <td>大</td>
+                    <td>TypeScript</td>
+                    <td>✅ MIT</td>
+                    <td>140K+ Stars</td>
+                </tr>
+                <tr>
+                    <td>LangChain</td>
+                    <td>大</td>
+                    <td>Python</td>
+                    <td>✅ Apache</td>
+                    <td>生态丰富</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>💡 适合谁用？</h3>
+            
+            <div class="target-list">
+                <div class="target-item">
+                    <h4>🔬 研究者</h4>
+                    <p>代码结构清晰，是理解Agent底层原理的最佳学习材料</p>
+                </div>
+                <div class="target-item">
+                    <h4>💻 开发者</h4>
+                    <p>需要本地化Agent方案，支持Ollama本地模型，数据不出域</p>
+                </div>
+                <div class="target-item">
+                    <h4>🧪 做多Agent研究</h4>
+                    <p>内置Swarm机制，可以做多智能体协作实验</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📚 推荐资源</h3>
+            
+            <div class="resource-list">
+                <ul>
+                    <li><a href="https://github.com/HKUDS/OpenHarness" target="_blank">OpenHarness GitHub →</a></li>
+                    <li><a href="https://docs.open-harness.dev" target="_blank">OpenHarness 文档 →</a></li>
+                    <li><a href="openharness-guide.html">OpenHarness配置指南 →</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
