@@ -526,6 +526,56 @@ footer a {
     text-decoration: underline;
 }
 
+/* Resource Table */
+.resource-table {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.resource-table table {
+    min-width: 500px;
+}
+
+.resource-table th, .resource-table td {
+    padding: 0.75rem;
+}
+
+.resource-table a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.resource-table a:hover {
+    text-decoration: underline;
+}
+
+.section-desc {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.section-desc code {
+    background: var(--text-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.more-link {
+    margin-top: 1rem;
+}
+
+.more-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.more-link a:hover {
+    text-decoration: underline;
+}
+
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
