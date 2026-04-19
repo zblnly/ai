@@ -687,14 +687,21 @@ footer a:hover {
 .section-desc {
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .section-desc code {
-    background: var(--text-color);
-    color: white;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    border: 1px solid #60a5f9;
 }
 
 .more-link {
