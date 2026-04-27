@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         loadRecentUpdates();
         initSmoothScroll();
         highlightCurrentPage();
+        initReadingProgress();
+        initTOC();
+        initMetaBar();
         console.log('%c AI Learning Resources %c Ready ',
             'background:#6366f1;color:white;padding:4px 8px;border-radius:4px 0 0 4px;',
             'background:#ec4899;color:white;padding:4px 8px;border-radius:0 4px 4px 0;');
@@ -231,4 +234,119 @@ function highlightCurrentPage() {
             link.classList.remove('active');
         }
     });
+}
+
+/* ========== Reading Progress Bar ========== */
+function initReadingProgress() {
+    var bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    document.body.appendChild(bar);
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            requestAnimationFrame(function () {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+                bar.style.transform = 'scaleX(' + (progress / 100).toFixed(3) + ')';
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+/* ========== Table of Contents ========== */
+function initTOC() {
+    var headings = document.querySelectorAll('.content-section h3');
+    if (headings.length < 2) return;
+
+    var toc = document.createElement('nav');
+    toc.className = 'toc';
+    toc.setAttribute('aria-label', '目录');
+
+    var tocTitle = document.createElement('div');
+    tocTitle.className = 'toc-title';
+    tocTitle.textContent = '📑 目录';
+    toc.appendChild(tocTitle);
+
+    var tocList = document.createElement('ul');
+    tocList.className = 'toc-list';
+
+    headings.forEach(function (h3, i) {
+        var id = 'toc-section-' + i;
+        h3.id = id;
+
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h3.textContent.replace(/^[^一-龥a-zA-Z0-9]+/u, '').trim();
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+
+    toc.appendChild(tocList);
+    document.body.appendChild(toc);
+
+    // Scrollspy
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            requestAnimationFrame(function () {
+                var links = tocList.querySelectorAll('a');
+                var currentId = '';
+                headings.forEach(function (h3) {
+                    if (h3.getBoundingClientRect().top <= 140) {
+                        currentId = h3.id;
+                    }
+                });
+                links.forEach(function (link) {
+                    var href = link.getAttribute('href').replace('#', '');
+                    link.classList.toggle('active', href === currentId);
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+/* ========== Meta Bar (更新日期 + 阅读时长) ========== */
+function initMetaBar() {
+    var pageHeader = document.querySelector('.page-header');
+    if (!pageHeader) return;
+
+    // 从 JSON-LD 中读取 dateModified
+    var dateStr = '';
+    var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    scripts.forEach(function (script) {
+        try {
+            var data = JSON.parse(script.textContent);
+            if (data.dateModified) dateStr = data.dateModified;
+        } catch (e) {}
+    });
+
+    // 计算阅读时长（中文按每分钟400字估算）
+    var main = document.querySelector('main');
+    var text = main ? main.textContent : '';
+    var charCount = text.replace(/\s+/g, '').length;
+    var minutes = Math.max(1, Math.round(charCount / 400));
+
+    var meta = document.createElement('div');
+    meta.className = 'page-meta';
+
+    if (dateStr) {
+        var dateSpan = document.createElement('span');
+        dateSpan.className = 'meta-date';
+        dateSpan.textContent = '📅 更新于 ' + dateStr;
+        meta.appendChild(dateSpan);
+    }
+
+    var timeSpan = document.createElement('span');
+    timeSpan.className = 'meta-time';
+    timeSpan.textContent = '⏱️ 约 ' + minutes + ' 分钟阅读';
+    meta.appendChild(timeSpan);
+
+    pageHeader.insertAdjacentElement('afterend', meta);
 }

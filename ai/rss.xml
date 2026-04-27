@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI学习资源站</title>
+    <link>https://zblnly.github.io/ai/</link>
+    <description>汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Apr 2026 08:00:00 +0800</lastBuildDate>
+    <atom:link href="https://zblnly.github.io/ai/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>AI学习入门指南 - 从零开始学习AI辅助编程</title>
+      <link>https://zblnly.github.io/ai/pages/guide.html</link>
+      <description>新手必看的AI学习路径，从零开始学习AI辅助编程，包含AI基础、工具选择、Prompt技巧和实战演练</description>
+      <pubDate>Sun, 13 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Prompt工程完全指南</title>
+      <link>https://zblnly.github.io/ai/pages/prompt-engineering.html</link>
+      <description>程序员必读的AI提示词工程实践手册，包含BROKE框架、CRISPE模板、实战技巧</description>
+      <pubDate>Mon, 14 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>2026年主流AI编程工具对比</title>
+      <link>https://zblnly.github.io/ai/pages/ai-tools-comparison.html</link>
+      <description>Cursor、Claude Code、GitHub Copilot、OpenCode、Windsurf、Cline等工具全面对比</description>
+      <pubDate>Tue, 15 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>OpenClaw完全指南 - 2026最火开源AI Agent</title>
+      <link>https://zblnly.github.io/ai/pages/openclaw-guide.html</link>
+      <description>2026年最火爆的开源AI Agent，60天247K+ Stars，支持微信/飞书/钉钉接入，7×24小时主动服务</description>
+      <pubDate>Sat, 26 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>OpenHarness完全指南 - 港大开源AI智能体框架</title>
+      <link>https://zblnly.github.io/ai/pages/openharness-guide.html</link>
+      <description>港大开源轻量级AI智能体驾驭框架，1.17万行代码实现Claude Code核心能力，支持43+工具、Ollama本地模型</description>
+      <pubDate>Fri, 25 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Agent Harness完全指南 - AI智能体基础设施</title>
+      <link>https://zblnly.github.io/ai/pages/harness-agent.html</link>
+      <description>理解Harness架构与OpenHarness框架，AI智能体的基础设施</description>
+      <pubDate>Thu, 24 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>OpenCode完全指南 - 实用技巧与最佳实践</title>
+      <link>https://zblnly.github.io/ai/pages/opencode-guide.html</link>
+      <description>2026年最强开源AI编程助手，140K+ Stars，支持75+模型，实用技巧与最佳实践</description>
+      <pubDate>Wed, 23 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Continue.dev完全指南 - 开源AI编程助手</title>
+      <link>https://zblnly.github.io/ai/pages/continue-dev-guide.html</link>
+      <description>开源AI编程助手配置与使用教程，包含安装、配置、常用场景和高级技巧</description>
+      <pubDate>Tue, 22 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Ollama本地大模型运行指南</title>
+      <link>https://zblnly.github.io/ai/pages/ollama-guide.html</link>
+      <description>在Windows上配置运行本地大语言模型，包括安装、模型选择、RTX 3060 Ti优化、与VSCode Continue.dev集成</description>
+      <pubDate>Mon, 21 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>CodeFuse安装指南 - 蚂蚁集团AI编程助手</title>
+      <link>https://zblnly.github.io/ai/pages/codefuse-guide.html</link>
+      <description>蚂蚁集团AI编程助手安装配置教程，支持VSCode、IntelliJ IDEA、PyCharm等10款IDE</description>
+      <pubDate>Sun, 20 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>WorkBuddy与CodeBuddy完全指南 - 腾讯AI助手</title>
+      <link>https://zblnly.github.io/ai/pages/workbuddy-codebuddy.html</link>
+      <description>腾讯推出的AI办公与编程助手，一句话完成复杂任务，支持本地文件操作、多模型切换</description>
+      <pubDate>Sat, 19 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>AI编程学习路线 - 从入门到实战</title>
+      <link>https://zblnly.github.io/ai/pages/ai-coding-path.html</link>
+      <description>从零开始学习AI辅助编程，包含Prompt工程、VSCode配置、Cursor、Continue.dev、OpenCode等工具的系统学习路径</description>
+      <pubDate>Fri, 18 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>AI最新动态 - 2026年4月AI超级周</title>
+      <link>https://zblnly.github.io/ai/pages/ai-news.html</link>
+      <description>2026年4月AI超级周：GPT-5.5、DeepSeek V4、Claude Opus 4.7密集发布，AI Agent爆发，AI破解60年数学难题</description>
+      <pubDate>Mon, 28 Apr 2026 08:00:00 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
