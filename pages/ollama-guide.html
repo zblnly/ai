@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ollama本地大模型运行指南 - 在Windows上配置运行本地大语言模型，包括安装、模型选择、RTX 3060 Ti优化、与VSCode Continue.dev集成">
+    <meta name="keywords" content="Ollama, 本地大模型, qwen2.5-coder, llama2, mistral, 模型量化, RTX 3060 Ti, Continue.dev">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="本地大模型运行指南 - Ollama配置教程">
+    <meta property="og:description" content="基于Ollama在Windows上运行本地大语言模型完整指南">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/pages/ollama-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>Ollama本地大模型运行指南 - Windows配置与RTX 3060 Ti优化 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>📚 本地大模型运行指南</h2>
+            <p>基于 Ollama 在 Windows 上运行本地大语言模型</p>
+        </div>
+
+        <div class="content-section">
+            <h3>快速开始</h3>
+            
+            <h4>1. 安装 Ollama</h4>
+            <p>前往 <a href="https://ollama.com" target="_blank">Ollama 官方网站</a> 下载 Windows 版本并安装。</p>
+            
+            <h4>2. 安装模型</h4>
+            <div class="code-block">
+# 安装 qwen2.5-coder:7b 模型（推荐代码生成）
+ollama pull qwen2.5-coder:7b
+
+# 或安装其他模型
+ollama pull llama2:7b
+ollama pull codellama:7b
+ollama pull mistral:7b
+            </div>
+            
+            <h4>3. 启动服务</h4>
+            <div class="code-block">
+# 方法1：前台运行（查看日志）
+ollama serve
+
+# 方法2：后台运行
+ollama serve > ollama.log 2>&1 &
+            </div>
+            
+            <h4>4. 基本使用</h4>
+            <div class="code-block">
+# 与模型交互
+ollama run qwen2.5-coder:7b
+
+# 查看已安装模型
+ollama list
+
+# 查看运行中的模型
+ollama ps
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Gemma 4 模型实战</h3>
+            
+            <h4>1. 关于 Gemma 4</h4>
+            <p>Google Gemma 4 是新一代开源模型，在代码理解和生成方面表现出色，适合编程任务和对话场景。</p>
+            
+            <h4>2. 下载 Gemma 4</h4>
+            <div class="code-block">
+# 查看可用的 Gemma 模型
+ollama search gemma
+
+# 下载 gemma4:e4b 版本（推荐，4B参数，适合8GB显存）
+ollama pull gemma4:e4b
+
+# 或者下载其他版本
+ollama pull gemma4
+ollama pull gemma4:2b
+            </div>
+            
+            <h4>3. 实战应用</h4>
+            <div class="code-block">
+# 启动 gemma4:e4b 模型进行对话
+ollama run gemma4:e4b
+
+# 示例对话
+# >>> 帮我写一个 Python 函数来计算斐波那契数列
+# >>> 解释一下什么是递归
+# >>> 帮我优化这段代码
+            </div>
+            
+            <h4>4. 切换不同模型</h4>
+            <div class="code-block">
+# 方法1：运行时指定模型
+ollama run gemma4:e4b
+
+# 方法2：查看所有已安装的模型
+ollama list
+
+# 方法3：使用特定模型回答问题
+ollama run qwen2.5-coder:7b  # 代码任务用 qwen
+ollama run gemma4:e4b          # 对话任务用 gemma
+ollama run llama2:7b            # 通用任务用 llama
+            </div>
+            
+            <h4>5. 在代码中切换模型</h4>
+            <p>如果你使用 Open WebUI 或 Next Web 等图形界面，可以：在设置中调整默认模型。</p>
+            <div class="code-block">
+# 在 Continue.dev 中切换模型
+{
+  "models": [
+    {
+      "title": "本地 gemma4",
+      "provider": "ollama",
+      "model": "gemma4:e4b",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}
+            </div>
+            
+            <h4>6. Gemma 4 vs 其他模型对比</h4>
+            <table>
+                <tr>
+                    <th>模型</th>
+                    <th>大小</th>
+                    <th>适用场景</th>
+                    <th>推荐显存</th>
+                </tr>
+                <tr>
+                    <td>gemma4:e4b</td>
+                    <td>~2.5GB</td>
+                    <td>编程、对话</td>
+                    <td>4GB+</td>
+                </tr>
+                <tr>
+                    <td>qwen2.5-coder:7b</td>
+                    <td>~4.7GB</td>
+                    <td>代码生成</td>
+                    <td>8GB+</td>
+                </tr>
+                <tr>
+                    <td>llama2:7b</td>
+                    <td>~3.8GB</td>
+                    <td>通用对话</td>
+                    <td>6GB+</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>与 VSCode Continue.dev 集成</h3>
+            <p>在 VSCode 的 Continue.dev 扩展设置中添加：</p>
+            <div class="code-block">
+{
+  "models": [
+    {
+      "title": "本地 qwen2.5-coder",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>推荐的模型配置</h3>
+            
+            <h4>量化版本选择（内存优化）</h4>
+            <div class="code-block">
+# Q4_K_M - 平衡版（默认，4.7GB）
+ollama pull qwen2.5-coder:7b:q4_K_M
+
+# Q3_K_M - 更小内存（~3.8GB）
+ollama pull qwen2.5-coder:7b:q3_K_M
+
+# Q5_K_M - 更高精度（~5.2GB）
+ollama pull qwen2.5-coder:7b:q5_K_M
+            </div>
+            
+            <h4>针对 RTX 3060 Ti 8GB 的优化</h4>
+            <ul>
+                <li><strong>模型大小</strong>：建议 7B 参数模型</li>
+                <li><strong>量化等级</strong>：Q4_K_M 或 Q3_K_M</li>
+                <li><strong>GPU 层数</strong>：50-60 层（在 ~/.ollama/config.json 中配置）</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>常见问题</h3>
+            
+            <div class="tool-item">
+                <h4>1. "Ollama 服务未运行"</h4>
+                <p>启动服务：<code>ollama serve</code></p>
+            </div>
+            
+            <div class="tool-item">
+                <h4>2. 内存不足</h4>
+                <p>使用更小的量化版本：<code>ollama pull qwen2.5-coder:7b:q3_K_S</code></p>
+            </div>
+            
+            <div class="tool-item">
+                <h4>3. 生成速度慢</h4>
+                <p>增加 GPU 层数和 CPU 线程数</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tools.html" class="btn">← 返回 AI 工具</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
