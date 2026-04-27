@@ -28,3 +28,9 @@ Thumbs.db
 
 # Coverage
 *.out
+
+# Claude Code
+.claude/
+
+# Vercel
+.vercel/
