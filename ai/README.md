@@ -65,7 +65,7 @@ Stop-Process -Name ollama -Force  # Windows
 
 - 静态网站 (HTML/CSS/JS)
 - 托管于 GitHub Pages
-- Vercel 部署配置
+- GitHub Pages 自动部署
 
 ## 📄 目录结构
 
@@ -85,8 +85,7 @@ ai/
 │   └── style.css
 ├── js/
 │   └── main.js
-├── README.md
-└── vercel.json
+└── README.md
 ```
 
 ## 🤝 参与贡献

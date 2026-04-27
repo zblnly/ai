@@ -27,6 +27,128 @@
     <title>AI学习资源站 | AI工具、教程、笔记</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/analytics.js"></script>
+    <style>
+        .camp-promo {
+            background: var(--bg-card);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-xl);
+            padding: 0;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        .camp-promo::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary), var(--secondary));
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        .camp-promo:hover {
+            border-color: var(--accent-green);
+            box-shadow: var(--shadow-hover);
+        }
+        .camp-promo-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 36px 40px;
+        }
+        .camp-promo-text {
+            flex: 1;
+        }
+        .camp-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green), #16a34a);
+            color: white;
+            padding: 4px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 12px;
+        }
+        .camp-promo-text h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .camp-promo-text h3 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .camp-promo-text p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .camp-promo-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .camp-price {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .camp-price strong {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+        .camp-promo-visual {
+            flex-shrink: 0;
+        }
+        .camp-day-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .camp-day-tags span {
+            display: block;
+            padding: 10px 20px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            transition: all var(--transition-fast);
+        }
+        .camp-day-tags span:nth-child(2) {
+            border-color: var(--primary-light);
+            background: rgba(99,102,241,0.05);
+        }
+        .camp-day-tags span:nth-child(3) {
+            border-color: var(--secondary-light);
+            background: rgba(236,72,153,0.04);
+            color: var(--secondary);
+        }
+        @media (max-width: 768px) {
+            .camp-promo-content {
+                flex-direction: column;
+                padding: 28px 24px;
+                gap: 20px;
+            }
+            .camp-day-tags {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .camp-day-tags span {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -40,6 +162,7 @@
                 <a href="pages/tutorials.html">教程</a>
                 <a href="pages/resources.html">资源</a>
                 <a href="pages/ai-news.html">动态</a>
+                <a href="pages/ai-training-camp.html" style="background:linear-gradient(135deg,var(--accent-green),#16a34a);color:white;border-radius:var(--radius-full);padding:9px 18px;font-weight:600">🎓 训练营</a>
             </nav>
         </div>
     </header>
@@ -49,6 +172,25 @@
             <div class="hero-content">
                 <h2>欢迎来到<span class="highlight">AI学习资源站</span></h2>
                 <p>这里汇集了我在AI领域的学习心得、工具推荐和经验总结，帮助你从零开始掌握AI辅助编程</p>
+            </div>
+        </section>
+
+        <section class="camp-promo animate-fade-in animate-delay-1">
+            <div class="camp-promo-content">
+                <div class="camp-promo-text">
+                    <span class="camp-badge">🎓 付费课程</span>
+                    <h3>AI辅助编程 <span class="highlight">7天训练营</span></h3>
+                    <p>系统课程 + 实战项目 + 附赠资料包，从零到实战只需7天</p>
+                    <div class="camp-promo-actions">
+                        <a href="pages/ai-training-camp.html" class="btn">了解课程详情 →</a>
+                        <span class="camp-price">仅需 <strong>￥19.9</strong></span>
+                    </div>
+                </div>
+                <div class="camp-promo-visual">
+                    <div class="camp-day-tags">
+                        <span>Day 1-2 基础</span><span>Day 3-4 实战</span><span>Day 5-7 进阶</span>
+                    </div>
+                </div>
             </div>
         </section>
 
