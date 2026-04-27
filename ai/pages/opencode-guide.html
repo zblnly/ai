@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpenCode完全指南 - 2026年最强开源AI编程助手，140K+ Stars，支持75+模型，实用技巧与最佳实践">
+    <meta name="keywords" content="OpenCode, AI编程助手, 开源, Claude Code替代, 教程, 最佳实践, 75+模型">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="OpenCode完全指南 - 2026年最强开源AI编程助手">
+    <meta property="og:description" content="140K+ GitHub Stars，75+模型支持，完整使用指南">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/pages/opencode-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    
+    <title>OpenCode完全指南 | 实用技巧与最佳实践 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+<nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="guide.html">入门</a>
+                <a href="tools.html">工具</a>
+                <a href="tutorials.html" class="active">教程</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🔧 OpenCode 完全指南</h2>
+            <p>2026年最强开源AI编程助手 | 140K+ GitHub Stars | 75+模型支持</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📖 OpenCode 是什么？</h3>
+            <p>OpenCode是一个<strong>开源的AI编码代理</strong>，运行在终端、IDE或桌面端。它不仅仅是一个聊天机器人，而是一个可以执行命令、搜索代码、调试错误和修改文件的智能编程伙伴。</p>
+            
+            <div class="feature-highlight">
+                <div class="highlight-item">
+                    <span class="num">140K+</span>
+                    <span class="label">GitHub Stars</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="num">6M+</span>
+                    <span class="label">月活开发者</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="num">75+</span>
+                    <span class="label">模型支持</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="num">MIT</span>
+                    <span class="label">开源协议</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 快速开始</h3>
+            
+            <div class="step-box">
+                <h4>1. 一键安装</h4>
+                <div class="code-block">
+# 推荐方式（Linux/macOS）
+curl -fsSL https://opencode.ai/install | bash
+
+# npm安装
+npm install -g opencode-ai
+
+# Homebrew
+brew install anomalyco/tap/opencode
+
+# Windows Scoop
+scoop install opencode
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>2. 首次配置</h4>
+                <div class="code-block">
+# 运行并选择模型
+opencode
+
+# 或使用 /connect 命令连接模型
+/connect
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>3. 初始化项目（重要！）</h4>
+                <p>首次使用运行 /init 让OpenCode分析你的项目：</p>
+                <div class="code-block">
+/init
+
+# 这会生成 AGENTS.md 文件
+# 建议提交到 Git，让AI理解项目规范
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>💡 核心工作流：Plan + Build</h3>
+            
+            <div class="workflow-box">
+                <p>OpenCode独特的<strong>双模式工作流</strong>：</p>
+                
+                <div class="mode-grid">
+                    <div class="mode-item">
+                        <h4>📋 Plan 模式</h4>
+                        <p>只读分析，不修改代码</p>
+                        <p class="trigger">按 <code>Tab</code> 键切换</p>
+                    </div>
+                    <div class="mode-item">
+                        <h4>🔨 Build 模式</h4>
+                        <p>全权限，执行修改</p>
+                        <p class="trigger">默认模式</p>
+                    </div>
+                </div>
+                
+                <p class="tip">先用Plan模式分析，确认后再切换到Build模式执行——这是专业用法。</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🎯 实用技巧与最佳实践</h3>
+            
+            <div class="tips-category">
+                <h4>📝 请求技巧</h4>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <span class="bad">❌</span>
+                        <span>修复这个bug</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="good">✅</span>
+                        <span>修复 user.service.ts 第42行的TypeScript错误</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="bad">❌</span>
+                        <span>让它更快</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="good">✅</span>
+                        <span>优化getUserById的数据库查询，使用索引</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tips-category">
+                <h4>📎 使用 @ 引用文件</h4>
+                <p>给AI精确的上下文：</p>
+                <div class="code-block">
+# 引用特定文件
+@utils/auth.ts
+
+# 引用多个文件  
+@src/api/users.ts @src/services/userService.ts
+
+# 引用整个目录
+@components/
+                </div>
+            </div>
+            
+            <div class="tips-category">
+                <h4>🛠️ 常用命令</h4>
+                <table>
+                    <tr>
+                        <th>命令</th>
+                        <th>作用</th>
+                    </tr>
+                    <tr>
+                        <td>/init</td>
+                        <td>初始化项目，生成AGENTS.md</td>
+                    </tr>
+                    <tr>
+                        <td>/undo</td>
+                        <td>撤销上一步修改</td>
+                    </tr>
+                    <tr>
+                        <td>/new</td>
+                        <td>创建新会话</td>
+                    </tr>
+                    <tr>
+                        <td>/help</td>
+                        <td>查看帮助</td>
+                    </tr>
+                    <tr>
+                        <td>/themes</td>
+                        <td>切换主题</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="tips-category">
+                <h4>🔄 会话管理</h4>
+                <div class="code-block">
+# 列出所有会话
+opencode sessions list
+
+# 恢复某个会话
+opencode sessions resume [session-id]
+
+# 查看会话历史
+opencode sessions history
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🤖 Agents 配置（高级）</h3>
+            
+            <p>通过创建 AGENTS.md 为项目配置专属AI角色：</p>
+            
+            <div class="code-block">
+# 在项目根目录创建 AGENTS.md
+
+# 示例：TypeScript项目规则
+---
+description: SST v3 Monorepo Project
+---
+
+## 技术栈
+- TypeScript + Bun
+- SST v3框架
+
+## 代码规范
+- 使用TypeScript strict mode
+- 共享代码放 packages/core/
+- 单元测试放 __tests__/
+
+## 项目结构
+- frontend/ - React前端
+- api/ - API服务
+- jobs/ - 后台任务
+            </div>
+            
+            <p class="note">将AGENTS.md提交到Git，整个团队都能受益。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>🔌 模型配置选择</h3>
+            
+            <table>
+                <tr>
+                    <th>模型</th>
+                    <th>特点</th>
+                    <th>推荐场景</th>
+                </tr>
+                <tr>
+                    <td>OpenCode Zen</td>
+                    <td>团队优化，按量付费</td>
+                    <td>日常编程</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.5 Flash</td>
+                    <td>免费250次/天</td>
+                    <td>免费试用</td>
+                </tr>
+                <tr>
+                    <td>GPT-4o</td>
+                    <td>综合能力强</td>
+                    <td>复杂任务</td>
+                </tr>
+                <tr>
+                    <td>qwen2.5-coder</td>
+                    <td>本地离线，完全免费</td>
+                    <td>隐私敏感</td>
+                </tr>
+                <tr>
+                    <td>Groq Llama</td>
+                    <td>高速推理</td>
+                    <td>需要快响应</td>
+                </tr>
+            </table>
+            
+            <p class="note"><strong>注意：</strong>2026年Anthropic阻止了OpenCode使用Claude模型，推荐使用GPT-4o或Gemini作为替代。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>⚙️ VSCode/IDE 中使用</h4>
+            
+            <ol>
+                <li>在VSCode中打开终端</li>
+                <li>运行 <code>opencode</code></li>
+                <li>按 <code>Cmd+Esc</code>（Mac）或 <code>Ctrl+Esc</code>（Win）在分屏中打开</li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>⚠️ 常见问题</h3>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: 安装后无法运行？</div>
+                <div class="faq-a">A: 确保 ~/.local/bin 在PATH中，或使用完整路径 ~/.local/bin/opencode</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: Claude模型不能用？</div>
+                <div class="faq-a">A: 2026年Anthropic已阻止OpenCode使用Claude，请使用GPT或Gemini。</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: 如何完全离线使用？</div>
+                <div class="faq-a">A: 配置Ollama本地模型，参考上面的本地模型配置。</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: AGENTS.md是什么？</div>
+                <div class="faq-a">A: 项目规则文件，让AI理解你的代码规范和架构，相当于给AI的"入职培训"。</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📚 推荐资源</h3>
+            
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>官方资源</h4>
+                    <ul>
+                        <li><a href="https://opencode.ai" target="_blank">OpenCode官网 →</a></li>
+                        <li><a href="https://github.com/anomalyco/opencode" target="_blank">GitHub仓库 →</a></li>
+                        <li><a href="https://opencode-tutorial.com/en/docs" target="_blank">官方文档 →</a></li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>学习资源</h4>
+                    <ul>
+                        <li><a href="https://opencodex.cc/" target="_blank">OpenCodex教程站 →</a></li>
+                        <li><a href="https://opencode-tutorial.com/en/getting-started" target="_blank">入门教程 →</a></li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>社区</h4>
+                    <ul>
+                        <li><a href="https://opencode.ai/discord" target="_blank">Discord社区 →</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 OpenCode vs 其他工具</h3>
+            
+            <table>
+                <tr>
+                    <th>对比项</th>
+                    <th>OpenCode</th>
+                    <th>Cursor</th>
+                    <th>Claude Code</th>
+                </tr>
+                <tr>
+                    <td>开源</td>
+                    <td>✅ MIT</td>
+                    <td>❌ 闭源</td>
+                    <td>❌ 闭源</td>
+                </tr>
+                <tr>
+                    <td>模型数</td>
+                    <td>75+</td>
+                    <td>专有</td>
+                    <td>仅Claude</td>
+                </tr>
+                <tr>
+                    <td>价格</td>
+                    <td>免费</td>
+                    <td>免费版有限</td>
+                    <td>订阅制</td>
+                </tr>
+                <tr>
+                    <td>多Agent</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+            <a href="ai-coding-path.html" class="btn" style="margin-left: 1rem;">AI编程学习路线 →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

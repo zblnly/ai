@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeFuse安装指南 - 蚂蚁集团AI编程助手安装配置教程，支持VSCode、IntelliJ IDEA、PyCharm等10款IDE">
+    <meta name="keywords" content="CodeFuse, AI编程助手, 蚂蚁集团, VSCode插件, IntelliJ IDEA, 安装指南">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="CodeFuse安装指南 - 蚂蚁集团AI编程助手">
+    <meta property="og:description" content="蚂蚁集团推出的AI编程助手安装配置教程">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://your-domain.com/pages/codefuse-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>CodeFuse安装指南 - 蚂蚁集团AI编程助手 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html" class="active" aria-current="page">AI 工具</a>
+                <a href="tutorials.html">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🔧 CodeFuse 安装指南</h2>
+            <p>蚂蚁集团推出的 AI 编程助手安装配置教程</p>
+        </div>
+
+        <div class="content-section">
+            <h3>什么是 CodeFuse？</h3>
+            <p>CodeFuse 是蚂蚁集团推出的 AI 编程助手，基于百亿参数的代码大模型，可根据开发者的输入提供智能建议和实时支持，帮助开发者自动生成代码、增加注释、生成测试用例、修复和优化代码等。</p>
+            <p>CodeFuse 支持 10 款 IDE，包括：</p>
+            <ul>
+                <li>Visual Studio Code</li>
+                <li>IntelliJ IDEA</li>
+                <li>PyCharm</li>
+                <li>WebStorm</li>
+                <li>GoLand</li>
+                <li>CLion</li>
+                <li>DataGrip</li>
+                <li>PhpStorm</li>
+                <li>RubyMine</li>
+                <li>支付宝小程序云云端研发</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>安装前提</h3>
+            <p>以 VS Code 为例，需要满足以下条件：</p>
+            <ul>
+                <li>VS Code 版本 1.75.0 及以上</li>
+                <li>稳定的网络连接</li>
+                <li>支付宝账号（用于登录和申请试用）</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>安装步骤</h3>
+            <ol>
+                <li>
+                    <strong>下载插件安装包</strong>
+                    <p>访问 CodeFuse 官网，下载对应 IDE 的插件安装包。目前提供的是 Beta 版本。</p>
+                </li>
+                <li>
+                    <strong>安装插件</strong>
+                    <p>以 VS Code 为例：</p>
+                    <ul>
+                        <li>打开 VS Code</li>
+                        <li>在左侧导航栏点击扩展图标</li>
+                        <li>点击右上角的 "..." 图标</li>
+                        <li>选择 "Install from VSIX..."</li>
+                        <li>选中下载的 CodeFuse-x.x.x.vsix 文件</li>
+                        <li>点击 "Install" 按钮</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>登录并申请试用</strong>
+                    <ul>
+                        <li>安装完成后，在 IDE 左侧导航栏点击 CodeFuse 图标</li>
+                        <li>点击 "登录" 按钮</li>
+                        <li>在弹窗中点击 "Open"</li>
+                        <li>使用支付宝登录 CodeFuse 官网</li>
+                        <li>填写申请理由，阅读并勾选用户服务协议和隐私协议</li>
+                        <li>点击 "提交申请"</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>等待审核</strong>
+                    <p>申请提交后，需要等待审核通过。审核通过后，插件面板会显示可使用状态。</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>功能介绍</h3>
+            <div class="feature-item">
+                <h4>AI 代码补全</h4>
+                <p>基于海量数据提供实时地代码补全服务，包括行内补全（单行补全）和片段补全（多行补全）。支持 Java、Python、TypeScript、JavaScript、Go 等 5 种主流编程语言的多行和单行代码补全，以及其他 40 种编程语言的单行代码补全。</p>
+            </div>
+            <div class="feature-item">
+                <h4>AI 添加注释</h4>
+                <p>智能生成代码注释，尤其在函数级别的注释生成方面表现出色，大幅提升代码的可读性和可维护性。</p>
+            </div>
+            <div class="feature-item">
+                <h4>AI 解释代码</h4>
+                <p>智能解析选中代码的意图，自动生成解释，帮助开发者更轻松地阅读和理解代码内容。</p>
+            </div>
+            <div class="feature-item">
+                <h4>AI 生成单测</h4>
+                <p>完成业务逻辑后，自动为目标代码生成单元测试，确保测试用例符合业务语义，从而更高效地发现潜在问题。</p>
+            </div>
+            <div class="feature-item">
+                <h4>AI 代码优化</h4>
+                <p>借助大模型的代码理解能力与静态分析技术，CodeFuse 可分析选定代码片段，提供优化与改进建议，并基于这些建议生成相应的代码补丁。</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>使用方法</h3>
+            <h4>代码补全</h4>
+            <p>CodeFuse 支持自动代码补全和手动代码补全两种触发方式：</p>
+            <ul>
+                <li><strong>自动触发</strong>：在编写代码时自动弹出补全建议</li>
+                <li><strong>手动触发</strong>：使用快捷键 Alt/Option + \ 手动触发代码补全</li>
+            </ul>
+            <p>支持切换多个补全结果，最多支持切换 2 个结果：</p>
+            <ul>
+                <li>Windows：Alt + ] 显示下一个补全结果，Alt + [ 显示上一个补全结果</li>
+                <li>Mac：Option + ] 显示下一个补全结果，Option + [ 显示上一个补全结果</li>
+            </ul>
+
+            <h4>右键菜单功能</h4>
+            <p>选中代码后，右键菜单中可使用以下功能：</p>
+            <ul>
+                <li>添加注释</li>
+                <li>解释代码</li>
+                <li>生成单测</li>
+                <li>代码优化</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>注意事项</h3>
+            <ul>
+                <li>目前 CodeFuse 处于 Beta 测试阶段，可能存在稳定性问题</li>
+                <li>所有智能服务均运行于云端，需保持稳定网络连接</li>
+                <li>企业级部署时需考虑数据安全和隐私保护</li>
+                <li>申请试用需要等待审核，审核时间可能会有延迟</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>官方资源</h3>
+            <ul>
+                <li><a href="https://www.codefuse.cn/" target="_blank">CodeFuse 官网</a></li>
+                <li><a href="https://blog.csdn.net/CodeFuse" target="_blank">CodeFuse 技术博客</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI 学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

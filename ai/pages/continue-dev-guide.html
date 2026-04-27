@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Continue.dev完全指南 - 开源AI编程助手配置与使用教程，包含安装、配置、常用场景和高级技巧">
+    <meta name="keywords" content="Continue.dev, AI编程助手, VSCode扩展, 开源AI, Continue配置, AI代码助手">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Continue.dev完全指南 - 开源AI编程助手">
+    <meta property="og:description" content="开源AI编程助手，让你的开发效率提升300%">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/continue-dev-guide.html">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>Continue.dev完全指南 | 开源AI编程助手 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">AI 工具</a>
+                <a href="tutorials.html" class="active" aria-current="page">教程</a>
+                <a href="notes.html">笔记</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🔧 Continue.dev完全指南</h2>
+            <p>开源AI编程助手，让你的开发效率提升300%</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📖 什么是Continue.dev？</h3>
+            <div class="intro-box">
+                <p><strong>Continue.dev</strong> 是一款开源的AI编程助手扩展，支持VS Code和JetBrains IDE，可连接任意LLM提供商。</p>
+                <p>与GitHub Copilot等闭源工具不同，它最大的优势在于：</p>
+                <ul class="feature-list">
+                    <li><strong>完全开源</strong> - 25K+ GitHub Stars</li>
+                    <li><strong>模型无关</strong> - 支持任意LLM（OpenAI、Claude、Ollama等）</li>
+                    <li><strong>本地部署</strong> - 可使用本地模型，保护代码隐私</li>
+                    <li><strong>深度集成</strong> - 四种核心模式：Autocomplete、Edit、Chat、Agent</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 快速开始</h3>
+            
+            <div class="step-box">
+                <h4>第一步：安装扩展</h4>
+                <ol>
+                    <li>打开VS Code，进入扩展市场（<code>Ctrl+Shift+X</code>）</li>
+                    <li>搜索 "Continue"</li>
+                    <li>点击安装</li>
+                </ol>
+                <p class="download-link"><a href="https://marketplace.visualstudio.com/items?itemName=continue.continue" target="_blank">VSCode扩展市场 →</a></p>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：配置模型</h4>
+                <p>安装后，Continue会提示你选择模型提供商：</p>
+                <div class="code-block">
+# 方式1：使用Ollama本地模型（推荐）
+ollama pull qwen2.5-coder:7b
+
+# 方式2：使用OpenAI API
+需要在config.json中配置API Key
+
+# 方式3：使用Claude API
+需要在config.json中配置API Key
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>第三步：开始使用</h4>
+                <p>按<code>Ctrl+L</code>打开侧边栏，开始与AI对话。</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🎯 四大核心功能</h3>
+            
+            <div class="feature-card">
+                <h4>1. Autocomplete（自动补全）</h4>
+                <p>在编写代码时提供智能的inline建议。</p>
+                <div class="code-block">
+// TODO: Implement a sorting algorithm
+function sortingAlgorithm(arr) {
+  // AI会自动建议实现
+}
+                </div>
+                <p>按<code>Tab</code>接受建议，<code>Esc</code>拒绝。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>2. Edit（编辑模式）</h4>
+                <p>对选中的代码进行快速修改。</p>
+                <ol>
+                    <li>选中需要修改的代码</li>
+                    <li>按<code>Ctrl+Shift+I</code>或右键选择"Edit"</li>
+                    <li>输入修改指令</li>
+                    <li>AI会显示diff预览，接受或拒绝</li>
+                </ol>
+            </div>
+            
+            <div class="feature-card">
+                <h4>3. Chat（对话模式）</h4>
+                <p>与AI进行交互式对话。</p>
+                <ul>
+                    <li>按<code>Ctrl+L</code>打开侧边栏</li>
+                    <li>选择代码后提问</li>
+                    <li>适合代码审查、调试、学习新概念</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h4>4. Agent（智能代理）</h4>
+                <p>自主完成复杂任务的AI代理。</p>
+                <ul>
+                    <li>切换到Agent模式</li>
+                    <li>输入复杂任务如："创建单元测试"</li>
+                    <li>AI会分析代码、创建文件、处理导入</li>
+                </ul>
+                <div class="code-block">
+# 示例任务
+"Write comprehensive unit tests for the sorting functions in this file"
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>💡 常用场景</h3>
+            
+            <div class="scenario-box">
+                <h4>场景一：快速理解陌生代码库</h4>
+                <ol>
+                    <li>选中一段复杂代码</li>
+                    <li>按<code>Ctrl+L</code>打开侧边栏</li>
+                    <li>输入："解释这段代码的作用，并指出潜在问题"</li>
+                </ol>
+                <div class="code-block">
+# 示例对话
+你：解释这个函数的作用，并指出潜在问题
+AI：[详细解释代码逻辑，并给出改进建议]
+                </div>
+            </div>
+            
+            <div class="scenario-box">
+                <h4>场景二：代码重构</h4>
+                <ol>
+                    <li>选中需要重构的代码块</li>
+                    <li>输入："重构这段代码，使其更符合最佳实践"</li>
+                </ol>
+            </div>
+            
+            <div class="scenario-box">
+                <h4>场景三：生成单元测试</h4>
+                <ol>
+                    <li>选中目标函数</li>
+                    <li>输入："为这个函数生成完整的单元测试，覆盖边界情况"</li>
+                </ol>
+            </div>
+            
+            <div class="scenario-box">
+                <h4>场景四：Debug排错</h4>
+                <ol>
+                    <li>粘贴报错信息</li>
+                    <li>描述你已尝试过的方法</li>
+                    <li>让AI分析可能的原因</li>
+                </ol>
+                <div class="code-block">
+# 示例
+[Error: Cannot read property 'name' of undefined]
+
+我已经尝试过：
+1. 检查了数据库连接，正常
+2. 重启了服务，问题依旧
+
+请分析可能的原因，按可能性从高到低排序。
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🔧 高级技巧</h3>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>技巧一：使用 @ 符号引用文件</h4>
+                    <p>引用项目中的文件作为上下文：</p>
+                    <div class="code-block">
+@filename.py - 引用特定文件
+@folder/ - 引用整个文件夹
+@codebase - 引用整个代码库
+                    </div>
+                    <div class="code-block">
+@utils.py @models.py
+请帮我重构这两个文件的导入语句，消除循环依赖
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>技巧二：配置自定义指令</h4>
+                    <p>在<code>config.json</code>中添加<code>systemPrompt</code>：</p>
+                    <div class="code-block">
+{
+  "systemPrompt": "你是一位资深的Python开发者。请遵循以下规范：\n- 使用type hints\n- 遵循PEP 8风格指南\n- 优先使用函数式编程\n- 所有公共函数必须有docstring"
+}
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>技巧三：使用模板快速生成</h4>
+                    <p>用斜杠命令快速生成代码：</p>
+                    <ul>
+                        <li><code>/edit</code> - 编辑选中代码</li>
+                        <li><code>/comment</code> - 添加注释</li>
+                        <li><code>/test</code> - 生成测试</li>
+                        <li><code>/fix</code> - 修复问题</li>
+                    </ul>
+                    <p>在侧边栏输入<code>/</code>查看所有命令。</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>技巧四：多模型切换</h4>
+                    <p>不同任务使用不同模型：</p>
+                    <table>
+                        <tr>
+                            <th>任务</th>
+                            <th>推荐模型</th>
+                        </tr>
+                        <tr>
+                            <td>代码生成</td>
+                            <td>Claude 3.5 / GPT-4o</td>
+                        </tr>
+                        <tr>
+                            <td>代码审查</td>
+                            <td>Claude（擅长分析）</td>
+                        </tr>
+                        <tr>
+                            <td>快速补全</td>
+                            <td>本地Ollama（低延迟）</td>
+                        </tr>
+                        <tr>
+                            <td>复杂推理</td>
+                            <td>Claude Opus</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>技巧五：自定义命令</h4>
+                    <p>添加常用工作流命令：</p>
+                    <div class="code-block">
+{
+  "customCommands": [
+    {
+      "name": "review",
+      "prompt": "审查此代码以查找错误、安全问题和性能问题。要具体且可执行。",
+      "description": "代码审查"
+    },
+    {
+      "name": "test",
+      "prompt": "为此代码编写全面的单元测试。包含边界情况。",
+      "description": "生成测试"
+    },
+    {
+      "name": "docstring",
+      "prompt": "按照最佳实践添加文档字符串。",
+      "description": "添加文档"
+    },
+    {
+      "name": "optimize",
+      "prompt": "优化此代码以提高性能。",
+      "description": "优化代码"
+    }
+  ]
+}
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>技巧六：隐私保护</h4>
+                    <p>处理敏感代码时：</p>
+                    <ol>
+                        <li>使用本地模型（Ollama、LM Studio）</li>
+                        <li>配置私有部署的LLM服务</li>
+                        <li>避免在对话中粘贴敏感信息</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>⚙️ 配置文件参考</h3>
+            
+            <div class="config-box">
+                <h4>完整config.json示例</h4>
+                <div class="code-block">
+{
+  "models": [
+    {
+      "title": "Chat — Qwen2.5-Coder 32B",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b",
+      "apiBase": "http://localhost:11434",
+      "contextLength": 32768,
+      "description": "Best for complex questions, code review"
+    },
+    {
+      "title": "Fast — CodeLlama 7B",
+      "provider": "ollama",
+      "model": "codellama:7b",
+      "apiBase": "http://localhost:11434",
+      "contextLength": 8192,
+      "description": "Quick answers, simple completions"
+    },
+    {
+      "title": "Autocomplete — StarCoder2 3B",
+      "provider": "ollama",
+      "model": "starcoder2:3b",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "tabAutocompleteOptions": {
+    "useFimFormatting": true
+  },
+  "systemPrompt": "你是一位资深开发者，擅长...",
+  "customCommands": [...]
+}
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>❓ 常见问题</h3>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Q1: Continue和GitHub Copilot有什么区别？</h4>
+                    <p>主要区别：开源vs闭源，模型自由选择vs绑定特定模型，支持本地模型vs必须联网。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q2: 需要付费吗？</h4>
+                    <p>基础功能免费，高级功能需要付费。也可以使用免费模型（Ollama本地模型）。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q3: 连接被拒绝怎么办？</h4>
+                    <p>检查Ollama是否启动：<code>ollama serve</code>或<code>curl http://localhost:11434</code></p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q4: 如何更新扩展？</h4>
+                    <p>VS Code: 扩展市场 → 搜索Continue → 点击更新<br>JetBrains: Settings → Plugins → 更新</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📚 推荐资源</h3>
+            
+            <div class="resource-links">
+                <ul>
+                    <li><a href="https://continue.dev/docs" target="_blank">Continue.dev官方文档 →</a></li>
+                    <li><a href="https://github.com/continue-dev/continue" target="_blank">Continue.dev GitHub →</a></li>
+                    <li><a href="https://docs.continue.dev/ide-extensions/quick-start" target="_blank">快速开始教程 →</a></li>
+                    <li><a href="https://www.tinyash.com/blog/continue-dev-complete-guide/" target="_blank">Continue.dev完全指南 →</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tutorials.html" class="btn">← 返回教程</a>
+            <a href="tools.html" class="btn" style="margin-left: 1rem;">查看AI工具 →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

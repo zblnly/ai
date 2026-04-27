@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI学习入门指南 - 新手必看的AI学习路径，从零开始学习AI辅助编程，包含AI基础、工具选择、Prompt技巧和实战演练">
+    <meta name="keywords" content="AI入门, 学习指南, AI学习路径, 新手教程, AI编程入门, AI辅助编程, Prompt工程, Continue.dev, Ollama">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <meta property="og:title" content="AI学习入门指南 - 从零开始学习AI辅助编程">
+    <meta property="og:description" content="AI学习入门指南 - 新手必看的AI学习路径，从零开始学习AI辅助编程，包含AI基础、工具选择、Prompt技巧和实战演练">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/pages/guide.html">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="AI学习资源站">
+    
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <title>AI学习入门指南 | 从零开始 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="guide.html" class="active">入门</a>
+                <a href="tools.html">工具</a>
+                <a href="tutorials.html">教程</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🚀 AI学习入门指南</h2>
+            <p>从零开始，掌握AI辅助编程能力</p>
+        </div>
+
+        <div class="content-section">
+            <h3>🎯 我适合看这个吗？</h3>
+            <div class="feature-card">
+                <p>如果你符合以下任意一条，这篇指南正是你需要：</p>
+                <ul class="check-list">
+                    <li>🤔 刚接触AI，不了解能做什么</li>
+                    <li>😕 不知道用什么AI工具</li>
+                    <li>😤 AI生成的代码总是不满意</li>
+                    <li>⏰ 想提升编程效率</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📍 学习路径地图</h3>
+            <div class="path-flow">
+                <div class="path-item">
+                    <span class="path-step">01</span>
+                    <h4>了解AI</h4>
+                    <p>什么是AI编程<br>能做什么/不能做什么</p>
+                    <span class="time">0.5天</span>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-item">
+                    <span class="path-step">02</span>
+                    <h4>选工具</h4>
+                    <p>选一个AI编程工具<br>安装并配置</p>
+                    <span class="time">1天</span>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-item">
+                    <span class="path-step">03</span>
+                    <h4>学Prompt</h4>
+                    <p>掌握基础Prompt技巧<br>让AI理解你的需求</p>
+                    <span class="time">2天</span>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-item">
+                    <span class="path-step">04</span>
+                    <h4>去实战</h4>
+                    <p>在真实项目中<br>练习AI编程</p>
+                    <span class="time">7天+</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🔰 第一步：了解AI编程</h3>
+            
+            <div class="info-card">
+                <h4>AI能做什么？</h4>
+                <ul>
+                    <li>✅ 生成代码（函数、类、整个模块）</li>
+                    <li>✅ 解释代码（理解陌生代码）</li>
+                    <li>✅ 调试排错（分析错误、修复bug）</li>
+                    <li>✅ 优化性能（重构、提速）</li>
+                    <li>✅ 生成测试（单元测试、集成测试）</li>
+                    <li>✅ 写文档（注释、API文档）</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h4>AI不能做什么？（需要你参与）</h4>
+                <ul>
+                    <li>❌ 理解完整业务逻辑</li>
+                    <li>❌ 知道你的代码库架构</li>
+                    <li>❌ 完全正确的业务代码</li>
+                    <li>❌ 处理线上生产问题</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h4>正确的心态</h4>
+                <p><strong>AI是助手，不是替代者</strong></p>
+                <p>它能帮你写代码，但<strong>需要你指挥</strong></p>
+                <p>Prompt写得越好，输出越准确</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>🛠️ 第二步：选一个工具</h3>
+            
+            <div class="tool-compare">
+                <div class="tool-option">
+                    <h4>🤖 推荐：Cursor</h4>
+                    <p class="tag">开箱即用</p>
+                    <p>基于VSCode，深度集成AI，上手最简单的选择。</p>
+                    <a href="https://cursor.sh" target="_blank" class="btn">下载 →</a>
+                </div>
+                
+                <div class="tool-option">
+                    <h4>🔧 Continue.dev</h4>
+                    <p class="tag">VSCode扩展</p>
+                    <p>开源免费，支持本地模型，保护代码隐私。</p>
+                    <a href="continue-dev-guide.html" class="btn">配置指南 →</a>
+                </div>
+                
+                <div class="tool-option">
+                    <h4>💻 Ollama本地模型</h4>
+                    <p class="tag">免费/离线</p>
+                    <p>在本地运行大模型，无需联网，数据不外泄。</p>
+                    <a href="ollama-guide.html" class="btn">配置指南 →</a>
+                </div>
+                
+                <div class="tool-option">
+                    <h4>⚡ OpenCode</h4>
+                    <p class="tag">开源最强</p>
+                    <p>140K+ GitHub Stars，支持75+模型，功能最全。</p>
+                    <a href="opencode-guide.html" class="btn">配置指南 →</a>
+                </div>
+            </div>
+            
+            <p class="tip-note"><strong>💡 新手建议：</strong>先从Cursor开始，体验好了再考虑其他工具。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 第三步：学Prompt基础</h3>
+            
+            <div class="tips-box">
+                <h4>核心原则：说清楚</h4>
+                <div class="code-block">
+# ❌ 模糊的Prompt（效果差）
+帮我写个排序算法
+
+# ✅ 清晰的Prompt（效果好）
+请用Java实现一个快速排序算法，要求：
+1. 输入：int[]数组
+2. 输出：排序后的int[]数组
+3. 时间复杂度O(n log n)
+4. 使用Spring Boot 3.x规范
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <h4>三要素模板</h4>
+                <ol>
+                    <li><strong>角色</strong>：你是一位xxx工程师</li>
+                    <li><strong>任务</strong>：具体要做什么</li>
+                    <li><strong>约束</strong>：有什么要求/限制</li>
+                </ol>
+                <div class="code-block">
+你是一位资深Java架构师。请帮我实现用户登录模块：
+- 使用Spring Boot 3 + JWT
+- 密码用BCrypt加密
+- 返回JSON格式
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <h4>更多技巧</h4>
+                <ul>
+                    <li>📎 <strong>给示例</strong>：输入→输出示例，让AI模仿</li>
+                    <li>🔢 <strong>分步骤</strong>：复杂任务分多次对话</li>
+                    <li>🚫 <strong>说禁止</strong>：告诉AI不能做什么</li>
+                </ul>
+            </div>
+            
+            <p class="link-more"><a href="prompt-engineering.html">→ 查看完整Prompt工程指南</a></p>
+        </div>
+
+        <div class="content-section">
+            <h3>⚔️ 第四步：实战演练</h3>
+            
+            <div class="practice-list">
+                <div class="practice-item">
+                    <h4>Day 1-2：让AI帮你写一个功能</h4>
+                    <p>选择一个小的功能模块，让AI生成完整代码</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h4>Day 3-4：让AI帮你Debug</h4>
+                    <p>找一个报错，让AI分析原因和修复方案</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h4>Day 5-6：让AI帮你重构</h4>
+                    <p>让AI优化你之前的代码，提升可读性</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h4>Day 7：让AI帮你写测试</h4>
+                    <p>让AI为之前的功能生成单元测试</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>❓ 常见问题</h3>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: AI生成的代码能直接用吗？</div>
+                <div class="faq-a">A: 不要直接用！一定要审查、验证测试。AI会犯错，需要你把关。</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: 生成的代码不满意怎么办？</div>
+                <div class="faq-a">A: 是你的Prompt没写清楚。重新描述需求，加上更多约束条件。</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: 要花钱吗？</div>
+                <div class="faq-a">A: 基础功能免费。付费版本效果更好，根据需求选择。</div>
+            </div>
+            
+            <div class="faq-simple">
+                <div class="faq-q">Q: 英文不好能用吗？</div>
+                <div class="faq-a">A: 能！用中文描述需求即可，AI都支持中文。</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>📚 接下来学什么？</h3>
+            
+            <div class="next-steps">
+                <div class="next-item">
+                    <h4>进阶教程</h4>
+                    <ul>
+                        <li><a href="ai-coding-path.html">完整学习路线 →</a></li>
+                        <li><a href="prompt-engineering.html">Prompt工程深入 →</a></li>
+                    </ul>
+                </div>
+                <div class="next-item">
+                    <h4>工具深度</h4>
+                    <ul>
+                        <li><a href="continue-dev-guide.html">Continue.dev高级 →</a></li>
+                        <li><a href="ollama-guide.html">本地模型优化 →</a></li>
+                    </ul>
+                </div>
+                <div class="next-item">
+                    <h4>AI动态</h4>
+                    <ul>
+                        <li><a href="ai-news.html">最新AI资讯 →</a></li>
+                        <li><a href="ai-tools-comparison.html">工具对比 →</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="btn">← 返回首页</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI学习入门指南",
+        "description": "从零开始学习AI辅助编程的完整指南，包含AI基础、工具选择、Prompt技巧和实战演练",
+        "image": "https://your-domain.com/og-image.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "AI学习者"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI学习资源站",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://your-domain.com/logo.png"
+            }
+        },
+        "datePublished": "2026-04-13",
+        "dateModified": "2026-04-13",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://your-domain.com/pages/guide.html"
+        }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://your-domain.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "入门指南",
+            "item": "https://your-domain.com/pages/guide.html"
+        }]
+    }
+    </script>
+</body>
+</html>
