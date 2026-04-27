@@ -1,295 +1,234 @@
-// AI Learning Resources - JavaScript
-
-// Performance monitoring
-const performanceMarks = {};
-
-function markPerformance(name) {
-    performanceMarks[name] = performance.now();
-}
-
-function measurePerformance(name) {
-    if (performanceMarks[name]) {
-        const duration = performance.now() - performanceMarks[name];
-        console.log(`[Performance] ${name}: ${duration.toFixed(2)}ms`);
-        delete performanceMarks[name];
-        return duration;
-    }
-    return null;
-}
-
-// Error handling
-function handleError(error, context = '') {
-    console.error(`[Error] ${context}:`, error);
-    // Could send to error reporting service here
-    // For now, just log and optionally show user-friendly message
-    
-    // In production, you might want to show a user-friendly error
-    if (!context.includes('Load recent updates')) { // Don't interfere with expected errors
-        // Only show alert for unexpected errors in development
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            alert(`发生错误: ${error.message}\n请查看控制台获取详细信息`);
-        }
-    }
-}
+// AI Learning Resources - Modern JavaScript v2.0
 
 document.addEventListener('DOMContentLoaded', () => {
-    markPerformance('totalLoadTime');
-    
     try {
-        console.log('AI Learning Resources Loaded');
-        
-        loadRecentUpdates();
-        highlightCurrentPage();
         initThemeToggle();
         initMobileMenu();
-        initAccessibilityFeatures();
+        initScrollEffects();
+        initBackToTop();
+        loadRecentUpdates();
+        initSmoothScroll();
+        highlightCurrentPage();
+        console.log('%c AI Learning Resources %c Ready ',
+            'background:#6366f1;color:white;padding:4px 8px;border-radius:4px 0 0 4px;',
+            'background:#ec4899;color:white;padding:4px 8px;border-radius:0 4px 4px 0;');
     } catch (error) {
-        handleError(error, 'Initialization');
-    } finally {
-        measurePerformance('totalLoadTime');
+        console.error('Initialization error:', error);
     }
 });
 
-// Theme toggle
-function initThemeToggle() {
-    try {
-        const header = document.querySelector('header');
-        if (!header) return;
-        
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'theme-toggle';
-        toggleBtn.setAttribute('aria-label', 'Toggle dark mode');
-        toggleBtn.innerHTML = '🌙';
-        toggleBtn.title = 'Toggle dark mode';
-        
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '☀️';
-        }
-        
-        toggleBtn.addEventListener('click', () => {
-            try {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                if (newTheme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    toggleBtn.innerHTML = '☀️';
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                }
-            } catch (error) {
-                handleError(error, 'Theme toggle');
-            }
-        });
-        
-        header.appendChild(toggleBtn);
-    } catch (error) {
-        handleError(error, 'Theme toggle initialization');
-    }
-}
-
-// Mobile menu
-function initMobileMenu() {
-    try {
-        const header = document.querySelector('header');
-        if (!header) return;
-        
-        const menuBtn = document.createElement('button');
-        menuBtn.className = 'mobile-menu-toggle';
-        menuBtn.setAttribute('aria-label', 'Toggle menu');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.innerHTML = '☰';
-        
-        const nav = document.querySelector('nav');
-        if (!nav) return;
-        
-        menuBtn.addEventListener('click', () => {
-            try {
-                const isExpanded = nav.classList.toggle('open');
-                menuBtn.setAttribute('aria-expanded', isExpanded);
-                menuBtn.innerHTML = isExpanded ? '✕' : '☰';
-            } catch (error) {
-                handleError(error, 'Mobile menu toggle');
-            }
-        });
-        
-        header.appendChild(menuBtn);
-    } catch (error) {
-        handleError(error, 'Mobile menu initialization');
-    }
-}
-
-// Theme toggle
+/* ========== Theme Toggle ========== */
 function initThemeToggle() {
     const header = document.querySelector('header');
     if (!header) return;
-    
+
     const toggleBtn = document.createElement('button');
     toggleBtn.className = 'theme-toggle';
-    toggleBtn.setAttribute('aria-label', 'Toggle dark mode');
+    toggleBtn.setAttribute('aria-label', '切换暗色模式');
     toggleBtn.innerHTML = '🌙';
-    toggleBtn.title = 'Toggle dark mode';
-    
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
         toggleBtn.innerHTML = '☀️';
     }
-    
+
     toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        if (newTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '☀️';
-            localStorage.setItem('theme', 'dark');
-        } else {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
             document.documentElement.removeAttribute('data-theme');
             localStorage.setItem('theme', 'light');
+            toggleBtn.innerHTML = '🌙';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleBtn.innerHTML = '☀️';
         }
     });
-    
-    header.appendChild(toggleBtn);
+
+    header.querySelector('.container').appendChild(toggleBtn);
 }
 
-// Mobile menu
+/* ========== Mobile Menu ========== */
 function initMobileMenu() {
     const header = document.querySelector('header');
     if (!header) return;
-    
+
     const menuBtn = document.createElement('button');
     menuBtn.className = 'mobile-menu-toggle';
-    menuBtn.setAttribute('aria-label', 'Toggle menu');
+    menuBtn.setAttribute('aria-label', '切换菜单');
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.innerHTML = '☰';
-    
+
     const nav = document.querySelector('nav');
     if (!nav) return;
-    
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+
+    function closeMenu() {
+        nav.classList.remove('open');
+        overlay.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.innerHTML = '☰';
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        nav.classList.add('open');
+        overlay.classList.add('open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        menuBtn.innerHTML = '✕';
+        document.body.style.overflow = 'hidden';
+    }
+
     menuBtn.addEventListener('click', () => {
-        const isExpanded = nav.classList.toggle('open');
-        menuBtn.setAttribute('aria-expanded', isExpanded);
-        menuBtn.innerHTML = isExpanded ? '✕' : '☰';
+        if (nav.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
-    
-    header.appendChild(menuBtn);
+
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+            closeMenu();
+            menuBtn.focus();
+        }
+    });
+
+    // Close on nav link click
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('open')) closeMenu();
+        });
+    });
+
+    header.querySelector('.container').appendChild(menuBtn);
 }
 
-// Load recent updates with performance optimization
-function loadRecentUpdates() {
-    markPerformance('loadRecentUpdates');
-    
-    try {
-        const recentList = document.getElementById('recent-list');
-        if (!recentList) return;
-        
-        const updates = [
-            { title: 'Ollama本地大模型运行指南', url: 'pages/ollama-guide.html' },
-            { title: 'Gemma4模型实战指南', url: 'pages/ollama-guide.html' },
-            { title: 'VSCode Continue.dev集成', url: '#' },
-            { title: 'RTX 3060 Ti性能优化', url: '#' }
-        ];
-        
-        // Use document fragment for better performance
-        const fragment = document.createDocumentFragment();
-        updates.forEach(item => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = item.url;
-            a.textContent = item.title;
-            li.appendChild(a);
-            fragment.appendChild(li);
-        });
-        
-        recentList.innerHTML = ''; // Clear existing content
-        recentList.appendChild(fragment);
-    } catch (error) {
-        handleError(error, 'Load recent updates');
-    } finally {
-        measurePerformance('loadRecentUpdates');
+/* ========== Scroll Effects ========== */
+function initScrollEffects() {
+    const header = document.querySelector('header');
+
+    // Header shadow on scroll
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                if (header) {
+                    header.classList.toggle('scrolled', window.scrollY > 20);
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
+
+    // Scroll reveal animations
+    const revealElements = document.querySelectorAll('.scroll-reveal, .content-section, .card, .news-item, .tool-item, .resource-item');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+    } else {
+        // Fallback: show all immediately
+        revealElements.forEach(el => el.classList.add('visible'));
     }
 }
 
-// Highlight current page
-function highlightCurrentPage() {
-    markPerformance('highlightCurrentPage');
-    
-    try {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('nav a');
-        
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath.split('/').pop()) {
-                link.classList.add('active');
-            }
-        });
-    } catch (error) {
-        handleError(error, 'Highlight current page');
-    } finally {
-        measurePerformance('highlightCurrentPage');
-    }
+/* ========== Back to Top ========== */
+function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', '返回顶部');
+    btn.innerHTML = '↑';
+    document.body.appendChild(btn);
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                btn.classList.toggle('visible', window.scrollY > 500);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+/* ========== Smooth Scroll for Anchor Links ========== */
+function initSmoothScroll() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(link.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Focus target for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
         }
     });
-});
+}
 
-// Accessibility enhancements
-function initAccessibilityFeatures() {
-    // Add keyboard navigation support
-    document.addEventListener('keydown', function(e) {
-        // Escape key to close mobile menu
-        if (e.key === 'Escape') {
-            const nav = document.querySelector('nav');
-            const menuBtn = document.querySelector('.mobile-menu-toggle');
-            if (nav && nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.innerHTML = '☰';
-                menuBtn.focus();
-            }
-        }
-        
-        // ?+ / to focus search (if we had search)
-        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
-            e.preventDefault();
-            // Would focus search input if implemented
+/* ========== Load Recent Updates ========== */
+function loadRecentUpdates() {
+    const recentList = document.getElementById('recent-list');
+    if (!recentList) return;
+
+    const updates = [
+        { title: 'Ollama 本地大模型运行指南', url: 'pages/ollama-guide.html' },
+        { title: 'Gemma 4 模型实战指南', url: 'pages/ollama-guide.html' },
+        { title: 'VSCode Continue.dev 集成配置', url: 'pages/continue-dev-guide.html' },
+        { title: 'AI 编程工具全面对比', url: 'pages/ai-tools-comparison.html' }
+    ];
+
+    const fragment = document.createDocumentFragment();
+    updates.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.url;
+        a.textContent = item.title;
+        li.appendChild(a);
+        fragment.appendChild(li);
+    });
+
+    recentList.innerHTML = '';
+    recentList.appendChild(fragment);
+}
+
+/* ========== Highlight Current Page in Nav ========== */
+function highlightCurrentPage() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === 'index.html' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
-    
-    // Ensure all interactive elements have proper focus indicators
-    const interactiveElements = document.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-    interactiveElements.forEach(el => {
-        if (!el.hasAttribute('tabindex')) {
-            el.setAttribute('tabindex', '0');
-        }
-    });
-    
-    // Add skip link focus management
-    const skipLink = document.querySelector('.skip-link');
-    if (skipLink) {
-        skipLink.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                target.setAttribute('tabindex', '-1');
-                target.focus();
-            }
-        });
-    }
-    
-    // Improve color contrast for users with visual impairments
-    // This is handled via CSS prefers-contrast media query
 }

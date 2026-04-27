@@ -7,32 +7,22 @@
     <meta name="keywords" content="AI, 人工智能, 大模型, Ollama, Prompt工程, AI编程, 机器学习, 深度学习, Continue.dev, OpenCode">
     <meta name="author" content="AI学习者">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    
-    <!-- Open Graph -->
+
     <meta property="og:title" content="AI学习资源站 - AI工具、教程、笔记">
     <meta property="og:description" content="汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com">
-    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <meta property="og:url" content="https://zblnly.github.io/ai/">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="AI学习资源站">
-    
-    <!-- Twitter Card -->
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI学习资源站 - AI工具、教程、笔记">
     <meta name="twitter:description" content="汇集AI领域的学习心得、工具推荐和经验总结">
-    <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
-    
-    <!-- Favicon -->
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    
-    <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="js/main.js" as="script">
-    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <title>AI学习资源站 | AI工具、教程、笔记</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -53,45 +43,42 @@
     </header>
 
     <main class="container" id="main-content" role="main">
-        <section class="hero">
-            <h2>欢迎来到AI学习资源站</h2>
-            <p>这里汇集了我在AI领域的学习心得、工具推荐和经验总结</p>
+        <section class="hero animate-fade-in">
+            <div class="hero-content">
+                <h2>欢迎来到<span class="highlight">AI学习资源站</span></h2>
+                <p>这里汇集了我在AI领域的学习心得、工具推荐和经验总结，帮助你从零开始掌握AI辅助编程</p>
+            </div>
         </section>
 
         <section class="cards">
-            <div class="card">
-                <h3>🚀 新手入门</h3>
-                <p>从零开始，7天学会AI辅助编程</p>
-                <a href="pages/guide.html" class="btn">查看详情 →</a>
+            <div class="card animate-fade-in animate-delay-1">
+                <div class="card-icon">🚀</div>
+                <h3>新手入门</h3>
+                <p>从零开始，7天学会AI辅助编程。了解基本概念，体验在线服务，掌握本地部署。</p>
+                <a href="pages/guide.html" class="btn">开始学习</a>
             </div>
-            <div class="card">
-                <h3>🛠️ AI工具</h3>
-                <p>本地大模型、AI编程助手工具</p>
-                <a href="pages/tools.html" class="btn">查看详情 →</a>
+            <div class="card animate-fade-in animate-delay-2">
+                <div class="card-icon">🛠️</div>
+                <h3>AI工具</h3>
+                <p>本地大模型、AI编程助手工具推荐与配置指南，包括Ollama、OpenCode等。</p>
+                <a href="pages/tools.html" class="btn">探索工具</a>
             </div>
-            <div class="card">
-                <h3>📚 教程</h3>
-                <p>Prompt工程、工具配置、实战指南</p>
-                <a href="pages/tutorials.html" class="btn">查看详情 →</a>
+            <div class="card animate-fade-in animate-delay-3">
+                <div class="card-icon">📚</div>
+                <h3>教程</h3>
+                <p>Prompt工程、工具配置、实战指南。一步步掌握AI辅助开发的技巧。</p>
+                <a href="pages/tutorials.html" class="btn">查看教程</a>
             </div>
-            <div class="card">
-                <h3>📦 资源</h3>
-                <p>工具下载、模型下载、学习平台</p>
-                <a href="pages/resources.html" class="btn">查看详情 →</a>
+            <div class="card animate-fade-in animate-delay-4">
+                <div class="card-icon">📦</div>
+                <h3>资源</h3>
+                <p>工具下载、模型下载、学习平台。一站式获取所有AI学习资源。</p>
+                <a href="pages/resources.html" class="btn">浏览资源</a>
             </div>
         </section>
 
-        <section class="recent">
-            <h3>最近更新</h3>
-            <ul id="recent-list">
-                <li><a href="pages/ollama-guide.html">本地大模型运行指南 - Ollama配置</a></li>
-                <li><a href="#">VSCode Continue.dev集成</a></li>
-                <li><a href="#">RTX 3060 Ti性能优化</a></li>
-            </ul>
-        </section>
-        
-        <section class="news-trends">
-            <h3>AI最新动态</h3>
+        <section class="news-trends animate-fade-in">
+            <h3>🔥 AI最新动态</h3>
             <div class="news-items">
                 <div class="news-item">
                     <h4>🤖 2026年Q1 AI大模型发展报告</h4>
@@ -114,54 +101,28 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 AI学习资源站 | <a href="#">关于</a></p>
+            <p>© 2026 AI学习资源站 | <a href="https://github.com/zblnly/ai" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "AI学习资源站",
         "description": "汇集AI领域的学习心得、工具推荐和经验总结，包括本地大模型、Prompt工程、AI辅助编程等",
-        "url": "https://your-domain.com",
-        "author": {
-            "@type": "Person",
-            "name": "AI学习者"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AI学习资源站",
-            "url": "https://your-domain.com"
-        },
-        "about": {
-            "@type": "Thing",
-            "name": "人工智能",
-            "description": "机器学习、深度学习、大语言模型、AI辅助编程、Prompt工程"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://your-domain.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "url": "https://zblnly.github.io/ai/",
+        "author": { "@type": "Person", "name": "AI学习者" },
+        "about": { "@type": "Thing", "name": "人工智能" }
     }
     </script>
-    
-    <!-- BreadcrumbList Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "首页",
-            "item": "https://your-domain.com/"
-        }]
+        "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "首页", "item": "https://zblnly.github.io/ai/" }]
     }
     </script>
-    
     <script src="js/main.js" defer></script>
 </body>
 </html>
