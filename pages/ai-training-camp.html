@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <link rel="canonical" href="https://zblnly.github.io/ai/pages/ai-training-camp.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI辅助编程7天训练营 - 从零开始，7天学会AI辅助编程。仅需19.9元，附赠Prompt模板+工具配置包。">
     <meta name="keywords" content="AI训练营, AI辅助编程, AI编程入门, Cursor教程, Prompt工程, AI学习, 编程培训">
@@ -1059,8 +1060,32 @@ ollama pull codellama:7b</code></pre>
             <h3>🚀 准备好开始了吗？</h3>
             <p class="cta-price">7天系统课程 + 5份附赠资料，仅需 <strong>￥19.9</strong></p>
             <p style="color:var(--text-muted);margin-bottom:24px;font-size:0.9rem">一顿饭的价格，换来一个AI时代的核心技能</p>
-            <a href="#" class="btn-cta">📩 立即报名参加</a>
-            <p style="margin-top:16px;font-size:0.82rem;color:var(--text-muted)">报名后请联系微信获取课程资料和学习群邀请</p>
+            <a href="#" class="btn-cta" onclick="document.getElementById('payment-flow').scrollIntoView({behavior:'smooth'});return false;">
+                📩 立即报名
+            </a>
+        </section>
+
+        <!-- 支付流程 -->
+        <section id="payment-flow" class="content-section animate-fade-in animate-delay-4" style="text-align:center;scroll-margin-top:100px">
+            <h3>📱 报名流程</h3>
+            <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:20px">
+                <div style="text-align:center;flex:1;min-width:200px;max-width:280px">
+                    <div class="qr-placeholder" style="width:180px;height:180px;margin:0 auto 12px;background:var(--bg-primary);border:2px dashed var(--border);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:var(--text-muted)">
+                        💳 微信收款码<br>（替换为你的码）
+                    </div>
+                    <p style="font-size:0.9rem;font-weight:600;color:var(--text-primary)">Step 1：扫码付款 ￥19.9</p>
+                </div>
+                <div style="text-align:center;flex:1;min-width:200px;max-width:280px">
+                    <div class="qr-placeholder" style="width:180px;height:180px;margin:0 auto 12px;background:var(--bg-primary);border:2px dashed var(--border);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:var(--text-muted)">
+                        📱 微信联系码<br>（替换为你的码）
+                    </div>
+                    <p style="font-size:0.9rem;font-weight:600;color:var(--text-primary)">Step 2：加微信发截图</p>
+                </div>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-top:12px">付款后请添加微信发送付款截图，获取课程资料和学习群邀请</p>
+            <div style="margin-top:16px;padding:16px 20px;background:rgba(99,102,241,0.04);border-radius:var(--radius-md);display:inline-block">
+                <p style="font-size:0.9rem;color:var(--text-primary);margin:0">微信号：<strong style="color:var(--primary);font-size:1.1rem">YourWeChatID</strong>（添加时备注"训练营"）</p>
+            </div>
         </section>
 
         <!-- FAQ -->
@@ -1111,6 +1136,16 @@ ollama pull codellama:7b</code></pre>
 
     <footer>
         <div class="container">
+<div class="footer-wechat">
+                <div class="wechat-cta">
+                    <div class="qr-placeholder">💳 赞赏码<br>（替换为你的码）</div>
+                    <span class="wechat-label">☕ 如果内容对你有帮助，欢迎赞赏</span>
+                </div>
+                <div class="wechat-cta">
+                    <div class="qr-placeholder">📱 公众号<br>（替换为你的码）</div>
+                    <span class="wechat-label">关注 <strong>公众号</strong> 获取更多AI干货</span>
+                </div>
+            </div>
             <p>© 2026 AI学习资源站 | <a href="https://github.com/zblnly/ai" target="_blank">GitHub</a></p>
         </div>
     </footer>
@@ -1123,11 +1158,23 @@ ollama pull codellama:7b</code></pre>
         "@type": "Course",
         "name": "AI辅助编程7天训练营",
         "description": "从零开始，7天学会AI辅助编程。系统课程+实战项目+附赠资料包。",
-        "provider": { "@type": "Organization", "name": "AI学习资源站" },
+        "provider": {
+            "@type": "Organization",
+            "name": "AI学习资源站",
+            "url": "https://zblnly.github.io/ai/"
+        },
         "offers": {
             "@type": "Offer",
             "price": "19.9",
-            "priceCurrency": "CNY"
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-04-01"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Online",
+            "courseWorkload": "P1W",
+            "inLanguage": "zh-CN"
         }
     }
     </script>

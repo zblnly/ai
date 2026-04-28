@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initReadingProgress();
         initTOC();
         initMetaBar();
+        initAffiliateTracking();
+        initOutboundLinkTracking();
         console.log('%c AI Learning Resources %c Ready ',
             'background:#6366f1;color:white;padding:4px 8px;border-radius:4px 0 0 4px;',
             'background:#ec4899;color:white;padding:4px 8px;border-radius:0 4px 4px 0;');
@@ -310,6 +312,34 @@ function initTOC() {
             ticking = true;
         }
     }, { passive: true });
+}
+
+/* ========== 联盟链接 & 外链跟踪 ========== */
+function initAffiliateTracking() {
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('a.affiliate-link');
+        if (!link) return;
+
+        var affiliate = link.getAttribute('data-affiliate') || 'unknown';
+        var url = link.href;
+
+        // 百度统计事件跟踪
+        if (typeof _hmt !== 'undefined') {
+            _hmt.push(['_trackEvent', 'affiliate', 'click', affiliate]);
+        }
+    });
+}
+
+function initOutboundLinkTracking() {
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[target="_blank"]');
+        if (!link) return;
+        if (link.classList.contains('affiliate-link')) return;
+
+        if (typeof _hmt !== 'undefined') {
+            _hmt.push(['_trackEvent', 'outbound', 'click', link.href]);
+        }
+    });
 }
 
 /* ========== Meta Bar (更新日期 + 阅读时长) ========== */

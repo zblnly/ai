@@ -1280,6 +1280,210 @@ button:focus-visible {
     }
 }
 
+/* ========== 联盟链接 ========== */
+.affiliate-link {
+    position: relative;
+}
+.affiliate-link::after {
+    content: ' 🔗';
+    font-size: 0.8em;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+}
+.affiliate-link:hover::after {
+    opacity: 1;
+}
+
+/* ========== 微信生态区（页脚） ========== */
+.footer-wechat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 24px 0 16px;
+    flex-wrap: wrap;
+}
+.wechat-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.wechat-cta .qr-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--bg-primary);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    transition: border-color var(--transition-fast);
+    text-align: center;
+    padding: 8px;
+}
+.wechat-cta .qr-placeholder:hover {
+    border-color: var(--accent-green);
+}
+.wechat-cta .wechat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.wechat-cta .wechat-label strong {
+    color: var(--accent-green);
+}
+
+/* ========== 公众号关注引导横幅 ========== */
+.follow-banner {
+    background: linear-gradient(135deg, rgba(99,102,241,0.04), rgba(34,197,94,0.04));
+    border: 2px solid var(--primary-light);
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    transition: all var(--transition-normal);
+}
+.follow-banner:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-md);
+}
+.follow-banner-text {
+    flex: 1;
+    min-width: 200px;
+}
+.follow-banner-text h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+.follow-banner-text p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+.follow-banner-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+}
+.btn-wechat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-size: 0.93rem;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 14px rgba(34,197,94,0.3);
+    border: none;
+    cursor: pointer;
+}
+.btn-wechat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(34,197,94,0.4);
+}
+
+/* ========== 赞助内容区域 ========== */
+.sponsored-section {
+    background: linear-gradient(135deg, rgba(99,102,241,0.03), rgba(236,72,153,0.03));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    position: relative;
+}
+.sponsored-section::before {
+    content: '赞助内容';
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--bg-card);
+    padding: 0 8px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+}
+.sponsored-section .sponsored-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+.sponsored-section .sponsored-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+.sponsored-section .sponsored-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+.sponsored-section .sponsored-link:hover {
+    color: var(--secondary);
+}
+
+/* ========== 免费资源下载横幅 ========== */
+.free-download-banner {
+    display: block;
+    background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(34,197,94,0.06));
+    border: 2px solid var(--primary-light);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    margin-bottom: 32px;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+.free-download-banner:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.free-download-banner h3 {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.free-download-banner p {
+    color: var(--text-secondary);
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+}
+
+/* ========== 响应式：微信区 ========== */
+@media (max-width: 768px) {
+    .footer-wechat {
+        gap: 24px;
+    }
+    .follow-banner {
+        padding: 24px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .follow-banner-actions {
+        flex-direction: column;
+    }
+}
+
 /* ========== Reduced Motion ========== */
 @media (prefers-reduced-motion: reduce) {
     *,
