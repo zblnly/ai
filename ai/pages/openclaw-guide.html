@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpenClaw完全指南 - 2026年最火爆的开源AI Agent，60天247K+ Stars，支持微信/飞书/钉钉接入，7×24小时主动服务">
+    <meta name="keywords" content="OpenClaw, AI Agent, 开源Agent, Claude Code, 微信AI, 飞书AI, 钉钉AI, 智能助手">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="OpenClaw完全指南 - 2026最火开源AI Agent">
+    <meta property="og:description" content="60天从9K到247K Stars的现象级开源Agent">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zblnly.github.io/ai/pages/openclaw-guide.html">
+
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+
+    <title>OpenClaw完全指南 | 2026最火开源AI Agent | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/analytics.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="skip-link">跳到首页</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="guide.html">入门</a>
+                <a href="tools.html">工具</a>
+                <a href="tutorials.html">教程</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <div class="page-header">
+            <h2>🦞 OpenClaw 完全指南</h2>
+            <p>2026年最火爆的开源AI Agent —— 60天247K+ Stars的现象级项目</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 项目概览：为什么OpenClaw如此火爆？</h3>
+
+            <h4>增长数据</h4>
+            <table>
+                <tr><th>指标</th><th>数据</th></tr>
+                <tr><td>GitHub Stars</td><td>247,000+ (60天从9K飙升)</td></tr>
+                <tr><td>月活用户</td><td>200万+</td></tr>
+                <tr><td>收购方</td><td>OpenAI (2026年情人节宣布)</td></tr>
+                <tr><td>接入平台</td><td>微信、飞书、钉钉、Discord、Slack</td></tr>
+                <tr><td>开源协议</td><td>MIT</td></tr>
+            </table>
+
+            <h4>成功密码：可及性压倒能力</h4>
+            <p>OpenClaw的成功不在于模型能力最强，而在于它打通了AI Agent触达用户的"最后一公里"——直接接入用户每天使用的IM工具，实现<strong>7×24小时主动性智能服务</strong>。</p>
+            <p>22%的员工在IT部门不知情的情况下偷偷使用，深圳近千人排队请人帮忙安装，黄牛价一度炒到1000元。</p>
+        </div>
+
+        <div class="content-section">
+            <h3>⚡ 快速开始</h3>
+
+            <h4>前置要求</h4>
+            <ul>
+                <li>Node.js 18+</li>
+                <li>任意LLM API Key（Claude、OpenAI、或本地Ollama）</li>
+                <li>（可选）微信/飞书/钉钉账号用于IM接入</li>
+            </ul>
+
+            <h4>安装</h4>
+            <div class="code-block">git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+npm install
+cp .env.example .env
+# 编辑 .env 填入 API Key</div>
+
+            <h4>配置Claude API</h4>
+            <div class="code-block"># .env
+ANTHROPIC_API_KEY=sk-ant-xxx
+DEFAULT_MODEL=claude-opus-4-7</div>
+
+            <h4>配置本地Ollama（免费方案）</h4>
+            <div class="code-block"># .env
+OLLAMA_BASE_URL=http://localhost:11434/v1
+OPENAI_API_KEY=ollama
+DEFAULT_MODEL=qwen3:32b</div>
+
+            <h4>启动</h4>
+            <div class="code-block">npm start          # 命令行模式
+npm run im         # IM接入模式（微信/飞书/钉钉）
+npm run server     # Web UI模式</div>
+        </div>
+
+        <div class="content-section">
+            <h3>🔧 核心功能</h3>
+
+            <h4>1. 多平台IM接入</h4>
+            <p>同时接入微信、飞书、钉钉、Discord、Slack，一个Agent服务所有平台：</p>
+            <ul>
+                <li><strong>微信</strong>: 通过wechaty协议，扫码登录即可使用</li>
+                <li><strong>飞书</strong>: 飞书应用 + 事件订阅，企业级部署</li>
+                <li><strong>钉钉</strong>: 钉钉机器人 + 消息推送</li>
+                <li><strong>Discord/Slack</strong>: 国际团队协作场景</li>
+            </ul>
+
+            <h4>2. 7×24主动性服务</h4>
+            <ul>
+                <li>定时推送AI资讯、GitHub Trending</li>
+                <li>监控代码仓库，自动Review PR</li>
+                <li>日历管理、会议提醒、周报自动生成</li>
+                <li>主动学习用户偏好，优化回复质量</li>
+            </ul>
+
+            <h4>3. Agent技能生态</h4>
+            <p>13,700+社区Skill覆盖编码、调研、客服、内容生成等场景，支持一键安装：</p>
+            <div class="code-block">openclaw skill install @openclaw/code-review
+openclaw skill install @openclaw/weekly-report
+openclaw skill install @openclaw/arxiv-search</div>
+        </div>
+
+        <div class="content-section">
+            <h3>🏗️ 架构原理</h3>
+
+            <h4>三层Harness架构</h4>
+            <p>OpenClaw采纳了2026年最新的Harness Engineering方法论：</p>
+            <ol>
+                <li><strong>流程管控层</strong>: 定义Agent行为边界，任务分解与编排</li>
+                <li><strong>并发调度层</strong>: 多平台消息路由，并发请求管理</li>
+                <li><strong>验证纠错层</strong>: 输出审核，幻觉检测，自动纠错</li>
+            </ol>
+
+            <h4>记忆系统</h4>
+            <ul>
+                <li><strong>短期记忆</strong>: 会话上下文，最近N轮对话</li>
+                <li><strong>长期记忆</strong>: 向量数据库存储用户偏好和历史交互</li>
+                <li><strong>共享记忆</strong>: 团队知识库，跨用户经验复用</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>📱 实战案例</h3>
+
+            <h4>场景1：个人AI助手</h4>
+            <p>接入微信后，OpenClaw可以：</p>
+            <ul>
+                <li>每天早上8点推送AI领域最新论文摘要</li>
+                <li>自动总结微信群聊关键信息</li>
+                <li>代码仓库有新的Issue/PR时主动通知</li>
+                <li>根据日历自动安排学习计划</li>
+            </ul>
+
+            <h4>场景2：团队开发助手</h4>
+            <p>接入飞书后，OpenClaw可以：</p>
+            <ul>
+                <li>自动Review GitHub PR，在飞书群发送Review意见</li>
+                <li>监控生产环境告警，自动排查并通知负责人</li>
+                <li>每周五自动生成团队周报</li>
+                <li>Sprint Planning时自动汇总任务进度</li>
+            </ul>
+
+            <h4>场景3：客户服务Agent</h4>
+            <p>接入钉钉后，OpenClaw可以：</p>
+            <ul>
+                <li>7×24小时自动回复客户咨询</li>
+                <li>基于知识库解答产品使用问题</li>
+                <li>复杂问题自动升级到人工客服</li>
+                <li>客户满意度提升40%+</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>🆚 与同类工具对比</h3>
+            <table>
+                <tr><th>特性</th><th>OpenClaw</th><th>Claude Code</th><th>Cursor</th></tr>
+                <tr><td>定位</td><td>通用Agent平台</td><td>CLI编程Agent</td><td>IDE编程助手</td></tr>
+                <tr><td>IM接入</td><td>✅ 微信/飞书/钉钉</td><td>❌</td><td>❌</td></tr>
+                <tr><td>7×24主动服务</td><td>✅ 核心特性</td><td>❌</td><td>❌</td></tr>
+                <tr><td>编程能力</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+                <tr><td>开源</td><td>✅ MIT</td><td>❌ 闭源</td><td>❌ 闭源</td></tr>
+                <tr><td>技能生态</td><td>13,700+ Skills</td><td>Slash Commands</td><td>Rules</td></tr>
+                <tr><td>适合场景</td><td>个人/团队全能助手</td><td>专业编程</td><td>IDE内编程</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>💡 最佳实践</h3>
+            <ul>
+                <li><strong>渐进式开放权限</strong>: 先让Agent只读，观察1-2周后再开放写入权限</li>
+                <li><strong>明确Skill边界</strong>: 每个Skill只做一件事，组合使用而非单个万能Skill</li>
+                <li><strong>日志全记录</strong>: 开启完整审计日志，便于问题排查和效果评估</li>
+                <li><strong>定期更新Prompt</strong>: 根据使用反馈每2周优化一次系统Prompt</li>
+                <li><strong>本地模型+云端模型混合</strong>: 敏感任务用本地模型，复杂任务用云端模型</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="tools.html" class="btn">← 返回工具页</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="https://github.com/zblnly/ai" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+name: AI Content Agent
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: ai-agent/package-lock.json
+      
+      - name: Install dependencies
+        run: cd ai-agent && npm ci
+      
+      - name: Configure Git
+        run: |
+          git config user.name "AI Content Agent"
+          git config user.email "agent@github.com"
+      
+      - name: Run Agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: cd ai-agent && node scheduler.js once
+      
+      - name: Commit changes
+        run: |
+          cd ai-agent
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Auto-update: AI content $(date -u +'%Y-%m-%d %H:%M')"
+            git push origin HEAD:agent-auto-update || echo "Push skipped"
+          fi

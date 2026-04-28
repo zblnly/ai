@@ -1,0 +1,29 @@
+{
+  "name": "ai-content-agent",
+  "version": "1.0.0",
+  "description": "AI学习网站智能内容Agent - 自动获取、生成和更新AI相关内容",
+  "main": "agent.js",
+  "scripts": {
+    "start": "node agent.js",
+    "dev": "node --watch agent.js",
+    "cron": "node scheduler.js"
+  },
+  "dependencies": {
+    "openai": "^4.20.0",
+    "rss-parser": "^3.13.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "node-schedule": "^2.1.1",
+    "cheerio": "^1.0.0-rc.12",
+    "github-api": "^3.4.0",
+    "turndown": "^7.1.2"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "content-generator",
+    "auto-updater"
+  ],
+  "author": "",
+  "license": "MIT"
+}

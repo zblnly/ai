@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI辅助编程7天训练营 - 从零开始，7天学会AI辅助编程。仅需19.9元，附赠Prompt模板+工具配置包。">
+    <meta name="keywords" content="AI训练营, AI辅助编程, AI编程入门, Cursor教程, Prompt工程, AI学习, 编程培训">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <meta property="og:title" content="AI辅助编程7天训练营 | 从零到实战 | AI学习资源站">
+    <meta property="og:description" content="从零开始，7天学会AI辅助编程。系统课程+实战项目+附赠资料包，仅需19.9元。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zblnly.github.io/ai/pages/ai-training-camp.html">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="AI学习资源站">
+
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+
+    <title>AI辅助编程7天训练营 | 从零到实战 | AI学习资源站</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/analytics.js"></script>
+    <style>
+        /* ===== 训练营专属样式 ===== */
+        .camp-hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 48px 64px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            margin-bottom: 48px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .camp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent), var(--primary), var(--secondary));
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        .camp-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .camp-hero .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green), #16a34a);
+            color: white;
+            padding: 6px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 1;
+        }
+        .camp-hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            position: relative;
+            z-index: 1;
+            line-height: 1.25;
+        }
+        .camp-hero h2 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .camp-hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .camp-hero .price-box {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(20,184,166,0.08));
+            border: 2px solid var(--accent-green);
+            border-radius: var(--radius-lg);
+            padding: 20px 36px;
+            position: relative;
+            z-index: 1;
+        }
+        .price-box .price-symbol {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+        .price-box .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .price-box .price-unit {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 课程大纲 */
+        .syllabus-grid {
+            display: grid;
+            gap: 16px;
+            counter-reset: day;
+        }
+        .day-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .day-card::before {
+            counter-increment: day;
+            content: "Day " counter(day);
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: var(--primary);
+            background: rgba(99,102,241,0.08);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .day-card:hover {
+            border-color: var(--primary-light);
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+        }
+        .day-card .day-content h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .day-card .day-content p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* 亮点卡片 */
+        .highlight-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .highlight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 28px 24px;
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        .highlight-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+        .highlight-card .hl-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+        .highlight-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .highlight-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* CTA 区块 */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99,102,241,0.04), rgba(236,72,153,0.04));
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-xl);
+            padding: 56px 40px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        .cta-section h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .cta-section .cta-price {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        .cta-section .cta-price strong {
+            font-size: 2rem;
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 42px;
+            background: linear-gradient(135deg, var(--accent-green), #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all var(--transition-normal);
+            box-shadow: 0 6px 24px rgba(34,197,94,0.35);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.02em;
+        }
+        .btn-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(34,197,94,0.45);
+        }
+        .btn-cta:active {
+            transform: translateY(-2px);
+        }
+
+        /* 附赠资料 */
+        .bonus-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+        .bonus-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+        .bonus-list li:hover {
+            border-color: var(--accent-green);
+            background: rgba(34,197,94,0.03);
+        }
+        .bonus-list .bonus-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            background: var(--bg-primary);
+            transition: all var(--transition-fast);
+        }
+        .faq-item:hover {
+            border-color: var(--primary-light);
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* 课程内容详情 */
+        .course-content .day-detail {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: var(--bg-primary);
+            transition: all var(--transition-fast);
+        }
+        .course-content .day-detail:hover {
+            border-color: var(--primary-light);
+        }
+        .course-content .day-detail[open] {
+            border-color: var(--primary);
+        }
+        .course-content .day-detail summary {
+            padding: 18px 24px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .course-content .day-detail summary::marker {
+            color: var(--primary);
+        }
+        .course-content .day-detail summary::-webkit-details-marker {
+            color: var(--primary);
+        }
+        .course-content .day-detail[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: rgba(99,102,241,0.03);
+        }
+        .course-content .day-detail-content {
+            padding: 24px 28px;
+        }
+        .course-content .day-detail-content h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 24px 0 10px;
+        }
+        .course-content .day-detail-content h4:first-child {
+            margin-top: 0;
+        }
+        .course-content .day-detail-content h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 18px 0 8px;
+        }
+        .course-content .day-detail-content p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin: 0 0 10px;
+            line-height: 1.7;
+        }
+        .course-content .day-detail-content ul,
+        .course-content .day-detail-content ol {
+            margin: 6px 0 12px;
+            padding-left: 22px;
+        }
+        .course-content .day-detail-content li {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            line-height: 1.7;
+        }
+        .course-content .day-detail-content pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            overflow-x: auto;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        .course-content .day-detail-content pre code {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+        }
+        .course-content .day-detail-content code {
+            background: rgba(99,102,241,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: var(--primary);
+        }
+        .course-content .day-detail-content blockquote {
+            border-left: 3px solid var(--primary-light);
+            padding: 10px 16px;
+            margin: 12px 0;
+            background: rgba(99,102,241,0.04);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: var(--text-secondary);
+        }
+        .course-content .day-detail-content blockquote p {
+            margin: 0;
+        }
+        .course-content .day-detail-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .course-content .day-detail-content th,
+        .course-content .day-detail-content td {
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .course-content .day-detail-content th {
+            background: rgba(99,102,241,0.06);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .course-content .day-detail-content td {
+            color: var(--text-secondary);
+        }
+        .course-content .day-detail-content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 20px 0;
+        }
+        .course-content .day-detail-content .obj-check {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        .course-content .day-detail-content .obj-cross {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .camp-hero {
+                padding: 56px 24px 40px;
+            }
+            .camp-hero h2 {
+                font-size: 1.8rem;
+            }
+            .price-box .price-amount {
+                font-size: 2.2rem;
+            }
+            .day-card {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cta-section {
+                padding: 40px 24px;
+            }
+            .cta-section h3 {
+                font-size: 1.4rem;
+            }
+            .course-content .day-detail summary {
+                padding: 14px 18px;
+                font-size: 0.95rem;
+            }
+            .course-content .day-detail-content {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <header>
+        <div class="container">
+            <a href="#main-content" class="skip-link">跳到主要内容</a>
+            <h1>🤖 AI 学习资源站</h1>
+            <nav aria-label="主导航">
+                <a href="../index.html">首页</a>
+                <a href="guide.html">入门</a>
+                <a href="tools.html">工具</a>
+                <a href="tutorials.html">教程</a>
+                <a href="resources.html">资源</a>
+                <a href="ai-news.html">动态</a>
+                <a href="ai-training-camp.html" class="active" aria-current="page">训练营 <span style="font-size:0.7rem;vertical-align:super;color:var(--accent-green);">Hot</span></a>
+            </nav>
+            <button class="theme-toggle" onclick="document.documentElement.toggleAttribute('data-theme')" aria-label="切换主题" title="切换深色/浅色模式">🌓</button>
+            <button class="mobile-menu-toggle" aria-label="菜单" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+        </div>
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <!-- Hero -->
+        <section class="camp-hero animate-fade-in">
+            <span class="badge">🎓 限时开放</span>
+            <h2>AI辅助编程 <span class="highlight">7天训练营</span></h2>
+            <p class="subtitle">从零开始，7天掌握AI辅助编程。系统课程 + 实战项目 + 附赠资料包。</p>
+            <div class="price-box">
+                <span class="price-symbol">￥</span>
+                <span class="price-amount">19.9</span>
+                <span class="price-unit">/ 终身可看</span>
+            </div>
+        </section>
+
+        <!-- 适合人群 -->
+        <section class="content-section animate-fade-in animate-delay-1">
+            <h3>🎯 这个训练营适合你吗？</h3>
+            <div class="highlight-cards">
+                <div class="highlight-card">
+                    <div class="hl-icon">🌱</div>
+                    <h4>编程新手</h4>
+                    <p>刚学编程，想借助AI加速学习和开发</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">💼</div>
+                    <h4>在职开发者</h4>
+                    <p>日常写CRUD，想用AI工具提升3倍效率</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">🎓</div>
+                    <h4>在校学生</h4>
+                    <p>计算机专业，想掌握AI编程增加竞争力</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">🔧</div>
+                    <h4>技术爱好者</h4>
+                    <p>对AI工具好奇，想系统性地学完整个工作流</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 你会学到什么 -->
+        <section class="content-section animate-fade-in animate-delay-2">
+            <h3>📋 7天学习计划</h3>
+            <p style="color:var(--text-secondary);margin-bottom:24px">每天1小时，从基础概念到实战落地，循序渐进掌握AI辅助编程。</p>
+            <div class="syllabus-grid">
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>AI是什么？能做什么？</h4>
+                        <p>理解AI辅助编程的本质，掌握AI的擅长领域和局限，建立正确的人机协作思维</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>选对工具：Cursor上手指南</h4>
+                        <p>安装配置Cursor，掌握核心快捷键（Tab补全、Ctrl+L对话、Ctrl+K改写），完成第一次AI编程</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>Prompt基础：让AI听懂你的话</h4>
+                        <p>掌握Prompt三要素（角色+任务+约束），写出高质量指令，输出质量提升50%+</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>实战：让AI帮你写代码</h4>
+                        <p>用AI开发完整的「待办事项」网页，包含前端页面和后端API，跑通整个开发流程</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>实战：让AI帮你调试和优化</h4>
+                        <p>学会用AI审查代码、分析Bug、生成测试用例，掌握代码审查清单</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>进阶：本地部署大模型</h4>
+                        <p>用Ollama在本地运行AI模型，保护代码隐私，零成本无限使用</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <h4>总结 + 搭建你的AI工作流</h4>
+                        <p>整合7天所学，建立写代码前→写代码时→写完后→提交前的完整AI工作流</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 完整课程内容 -->
+        <section class="content-section course-content animate-fade-in animate-delay-2">
+            <h3>📖 完整课程内容</h3>
+            <p style="color:var(--text-secondary);margin-bottom:24px">点击每天标题展开详细内容，包含完整讲解、代码示例和小作业。</p>
+
+            <details class="day-detail">
+                <summary>Day 1：AI是什么？能做什么？</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>理解 AI 辅助编程的原理</li>
+                        <li>知道 AI 能帮你做什么、不能做什么</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>AI 辅助编程是什么？</h5>
+                    <p>AI 编程工具 = 一个 24 小时在线的「高级程序员助手」，它：</p>
+                    <ul>
+                        <li>能理解你说的话（自然语言）</li>
+                        <li>能读懂你的代码</li>
+                        <li>能帮你写代码、改代码、解释代码</li>
+                    </ul>
+                    <h5>AI 能做什么？</h5>
+                    <p><span class="obj-check">✅ 擅长：</span></p>
+                    <ul>
+                        <li>生成重复性代码（CRUD、API 调用）</li>
+                        <li>解释你不熟悉的代码</li>
+                        <li>帮你想思路、给建议</li>
+                        <li>翻译语言（Python → Go）</li>
+                        <li>生成测试用例</li>
+                        <li>优化代码性能</li>
+                    </ul>
+                    <p><span class="obj-cross">❌ 不擅长：</span></p>
+                    <ul>
+                        <li>完全替代你思考</li>
+                        <li>100% 正确的代码（AI 也会犯错）</li>
+                        <li>理解复杂业务逻辑</li>
+                        <li>一次性完成整个大项目</li>
+                    </ul>
+                    <h5>重要原则：你是老板，AI 是助手</h5>
+                    <pre><code>你 → 下达指令 → AI → 执行任务 → 你 → 审查结果</code></pre>
+                    <p><strong>你的角色：</strong></p>
+                    <ol>
+                        <li>描述清楚需求</li>
+                        <li>审查 AI 输出的代码</li>
+                        <li>做最终决策</li>
+                    </ol>
+                    <h4>📝 小作业</h4>
+                    <ol>
+                        <li>用自己的话解释：什么是 AI 辅助编程？</li>
+                        <li>列出 3 个你觉得 AI 能帮到你的场景</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 2：选对工具 — Cursor 上手指南</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>安装并配置 Cursor</li>
+                        <li>完成第一次 AI 辅助编程</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>为什么选 Cursor？</h5>
+                    <table>
+                        <thead><tr><th>工具</th><th>优点</th><th>缺点</th></tr></thead>
+                        <tbody>
+                            <tr><td>Cursor</td><td>上手简单、效果好</td><td>付费版更好用</td></tr>
+                            <tr><td>GitHub Copilot</td><td>集成好</td><td>贵</td></tr>
+                            <tr><td>Continue.dev</td><td>开源免费</td><td>配置稍复杂</td></tr>
+                            <tr><td>Claude Code</td><td>功能强大</td><td>需要配置</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>新手推荐：Cursor</strong> — 开箱即用，零配置。</p>
+                    <h5>安装步骤</h5>
+                    <p><strong>Step 1：下载</strong></p>
+                    <pre><code>官网：https://cursor.sh
+选择 Windows 版本下载</code></pre>
+                    <p><strong>Step 2：安装</strong><br>双击安装包，默认安装即可</p>
+                    <p><strong>Step 3：打开项目</strong></p>
+                    <pre><code>1. 点击 "Open Folder" 选择你的代码目录
+2. 或者直接拖拽文件夹到 Cursor 窗口</code></pre>
+                    <h5>Cursor 核心功能</h5>
+                    <pre><code>┌─────────────────────────────────────────┐
+│  Ctrl + L   →  打开 AI 对话窗口         │
+│  Ctrl + K   →  选中代码后，让 AI 改写   │
+│  Tab        →  按 Tab 补全代码          │
+│  Ctrl + Enter →  补全多行代码           │
+└─────────────────────────────────────────┘</code></pre>
+                    <h4>📝 小作业</h4>
+                    <ol>
+                        <li>安装 Cursor 并打开</li>
+                        <li>让 AI 帮你写一个函数（任意语言）</li>
+                        <li>把代码复制运行，确认能跑通</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 3：Prompt 基础 — 让 AI 听懂你的话</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>掌握 Prompt 编写三要素</li>
+                        <li>能写出清晰的指令</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>为什么 Prompt 很重要？</h5>
+                    <p>同样一个工具，<strong>写好 Prompt 的人</strong> vs <strong>随便写的人</strong>：</p>
+                    <ul>
+                        <li>输出质量差距：50%+</li>
+                        <li>花费时间差距：2-3 倍</li>
+                    </ul>
+                    <h5>Prompt 三要素</h5>
+                    <pre><code>┌────────────────────────────────────┐
+│  1️⃣ 角色：你是什么身份？            │
+│  2️⃣ 任务：具体要做什么？           │
+│  3️⃣ 约束：有什么要求/限制？        │
+└────────────────────────────────────┘</code></pre>
+                    <h5>模板</h5>
+                    <p><strong>❌ 差 Prompt（模糊）</strong></p>
+                    <pre><code>帮我写个排序算法</code></pre>
+                    <p><strong>✅ 好 Prompt（三要素齐全）</strong></p>
+                    <pre><code>请用 Python 实现一个快速排序算法：
+1. 角色：你是一位资深算法工程师
+2. 任务：实现快速排序算法
+3. 约束：
+   - 输入：整数列表
+   - 输出：排序后的整数列表
+   - 时间复杂度 O(n log n)
+   - 添加注释说明关键步骤</code></pre>
+                    <h5>更多技巧</h5>
+                    <p><strong>技巧 1：给示例</strong></p>
+                    <pre><code>请模仿以下风格写一个函数：
+[粘贴示例代码]
+
+要求：
+- 变量命名清晰
+- 有异常处理
+- 返回明确的错误信息</code></pre>
+                    <p><strong>技巧 2：分步骤</strong></p>
+                    <pre><code>第一步：请告诉我实现这个功能需要哪些步骤？
+第二步：请写出第一步的代码
+第三步：请写出第二步的代码</code></pre>
+                    <p><strong>技巧 3：说禁止</strong></p>
+                    <pre><code>请写一个用户登录接口，要求：
+- 使用 JWT
+- 【禁止】在代码中硬编码密钥
+- 【禁止】返回明文密码
+- 密码必须加密存储</code></pre>
+                    <h5>常见问题</h5>
+                    <p><strong>Q：英文 Prompt 效果更好吗？</strong><br>A：不一定。中文已经很好用，但英文可能在某些场景更精确。</p>
+                    <p><strong>Q：Prompt 多长合适？</strong><br>A：清晰 &gt; 简短。宁可多写一点描述，也不要让 AI 猜你的意思。</p>
+                    <h4>📝 小作业</h4>
+                    <p>用三要素模板优化以下 Prompt：</p>
+                    <p>原 Prompt：<code>帮我写个网站首页</code></p>
+                    <p>优化后：</p>
+                    <pre><code>你是一位资深前端工程师。
+任务：帮我写一个网站首页的 HTML 代码。
+约束：
+- 响应式布局，支持手机和电脑
+- 使用 Flexbox 布局
+- 包含：导航栏、banner、3 个产品卡片、底部版权
+- 配色：蓝色主题</code></pre>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 4：实战 — 让 AI 帮你写代码</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>用 AI 开发一个完整的小功能</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>实战项目：用 AI 写一个「待办事项」网页</h5>
+                    <p><strong>目标：</strong>完成后端 API + 前端页面</p>
+                    <p><strong>Step 1：先让 AI 做规划</strong></p>
+                    <pre><code>我要做一个待办事项网页，包含：
+- 添加待办
+- 标记完成
+- 删除待办
+技术栈：HTML + CSS + JavaScript（纯前端）
+
+请告诉我：
+1. 文件结构
+2. 每个文件需要实现的功能
+3. 数据存储方案</code></pre>
+                    <p><strong>Step 2：让 AI 写后端</strong></p>
+                    <pre><code>请用 Node.js + Express 实现待办事项的后端 API：
+1. GET /todos - 获取所有待办
+2. POST /todos - 添加待办
+3. PUT /todos/:id - 更新待办
+4. DELETE /todos/:id - 删除待办
+
+要求：
+- 使用 JSON 文件存储数据
+- 返回统一格式 {success: true, data: ...}</code></pre>
+                    <p><strong>Step 3：让 AI 写前端</strong></p>
+                    <pre><code>请帮我写一个待办事项的前端页面：
+- 添加输入框 + 添加按钮
+- 待办列表，每项有勾选框和删除按钮
+- 点击待办可以编辑
+
+要求：
+- 纯 HTML + CSS + JS
+- 美观简洁
+- 适配手机端</code></pre>
+                    <h5>让 AI 帮你调试</h5>
+                    <p><strong>场景：代码报错</strong></p>
+                    <pre><code>我的代码报错了：
+[粘贴报错信息]
+
+代码如下：
+[粘贴代码]
+
+请帮我分析问题并修复</code></pre>
+                    <h4>📝 小作业</h4>
+                    <p>完成上述实战项目，代码能跑通即可。</p>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 5：实战 — 让 AI 帮你调试和优化</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>用 AI 审查代码问题</li>
+                        <li>用 AI 优化代码性能</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>场景 1：代码报错</h5>
+                    <p>让 AI 帮忙：</p>
+                    <pre><code>我的代码报错：
+[粘贴报错信息]
+
+代码：
+[粘贴代码]
+
+请：
+1. 分析报错原因
+2. 修复代码
+3. 解释修复逻辑</code></pre>
+                    <h5>场景 2：代码优化</h5>
+                    <pre><code>请审查以下代码，找出：
+1. 潜在 Bug
+2. 性能问题
+3. 安全风险
+4. 代码规范问题
+
+代码：
+[粘贴代码]
+
+输出格式：
+- 问题列表
+- 优化建议
+- 优化后的代码</code></pre>
+                    <h5>场景 3：添加测试</h5>
+                    <pre><code>请为以下函数生成测试用例：
+
+代码：
+[粘贴函数]
+
+要求：
+- 使用 Jest 框架
+- 覆盖正常场景
+- 覆盖边界情况
+- 覆盖率 80%+</code></pre>
+                    <h5>代码审查清单</h5>
+                    <pre><code>请用以下清单审查代码：
+□ 变量命名是否清晰？
+□ 有没有未处理的异常？
+□ 有没有安全漏洞（如 SQL 注入）？
+□ 性能是否有优化空间？
+□ 代码是否可读、可维护？
+□ 测试覆盖率是否足够？</code></pre>
+                    <h4>📝 小作业</h4>
+                    <ol>
+                        <li>找一个之前写过的代码</li>
+                        <li>让 AI 帮你审查</li>
+                        <li>根据建议优化代码</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 6：进阶 — 本地部署大模型</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>在本地电脑运行自己的 AI 模型</li>
+                        <li>理解什么场景适合本地部署</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>为什么要本地部署？</h5>
+                    <p><strong>优点：</strong></p>
+                    <ul>
+                        <li>✅ 数据不外泄（隐私代码安全）</li>
+                        <li>✅ 无限使用（不花钱）</li>
+                        <li>✅ 离线可用</li>
+                    </ul>
+                    <p><strong>缺点：</strong></p>
+                    <ul>
+                        <li>⚠️ 需要好显卡（至少 4GB 显存）</li>
+                        <li>⚠️ 速度比在线 API 慢</li>
+                    </ul>
+                    <h5>适合人群</h5>
+                    <table>
+                        <thead><tr><th>场景</th><th>推荐</th></tr></thead>
+                        <tbody>
+                            <tr><td>代码隐私敏感（公司项目）</td><td>本地部署</td></tr>
+                            <tr><td>学习/练习/个人项目</td><td>云端 API</td></tr>
+                            <tr><td>低配电脑</td><td>先用云端</td></tr>
+                        </tbody>
+                    </table>
+                    <h5>Ollama 安装教程</h5>
+                    <p><strong>Step 1：下载 Ollama</strong></p>
+                    <pre><code>官网：https://ollama.com
+下载 Windows 版本</code></pre>
+                    <p><strong>Step 2：安装</strong><br>双击安装包，默认安装</p>
+                    <p><strong>Step 3：下载模型</strong></p>
+                    <pre><code>打开命令行（cmd 或 PowerShell）
+输入以下命令下载模型：
+
+ollama pull llama3
+（首次下载约 4-5GB，等待几分钟）
+
+或者下载更小的模型（适合低配电脑）：
+ollama pull codellama:7b</code></pre>
+                    <p><strong>Step 4：测试运行</strong></p>
+                    <pre><code>ollama run llama3
+
+输入你想问的问题，测试是否正常</code></pre>
+                    <h5>在 Cursor 中使用本地模型</h5>
+                    <ol>
+                        <li>安装 Continue 插件（VSCode）</li>
+                        <li>配置本地模型：</li>
+                    </ol>
+                    <pre><code>{
+  "languageModel": {
+    "ollama": {
+      "host": "http://localhost:11434",
+      "model": "llama3"
+    }
+  }
+}</code></pre>
+                    <h4>📝 小作业</h4>
+                    <ol>
+                        <li>安装 Ollama（可选，有好显卡再装）</li>
+                        <li>运行一个本地模型测试</li>
+                        <li>如果成功，在 VSCode 中配置使用</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="day-detail">
+                <summary>Day 7：总结 + 搭建你的 AI 工作流</summary>
+                <div class="day-detail-content">
+                    <h4>🎯 学习目标</h4>
+                    <ul>
+                        <li>整合前 6 天所学</li>
+                        <li>建立适合自己的 AI 工作流</li>
+                    </ul>
+                    <h4>📖 内容</h4>
+                    <h5>7 天学习总结</h5>
+                    <pre><code>✅ Day 1：理解 AI 辅助编程的本质
+✅ Day 2：掌握 Cursor 工具使用
+✅ Day 3：学会写好 Prompt
+✅ Day 4：用 AI 开发完整功能
+✅ Day 5：用 AI 调试和优化代码
+✅ Day 6：了解本地部署方案</code></pre>
+                    <h5>你现在应该能：</h5>
+                    <ul>
+                        <li>✅ 独立使用 AI 工具编程</li>
+                        <li>✅ 写出清晰的指令</li>
+                        <li>✅ 用 AI 调试和优化代码</li>
+                        <li>✅ 选择合适的工具和方案</li>
+                    </ul>
+                    <h5>搭建你的 AI 工作流</h5>
+                    <pre><code>1. 写代码前
+   → 让 AI 帮你分析需求、拆解任务
+
+2. 写代码时
+   → 用 Cursor Tab 自动补全
+   → 遇到问题 Ctrl+L 问 AI
+
+3. 写完后
+   → 让 AI 帮你审查代码
+   → 让 AI 生成测试用例
+
+4. 提交前
+   → 让 AI 检查安全和性能</code></pre>
+                    <h5>Prompt 模板库</h5>
+                    <p><strong>模板 1：需求分析</strong></p>
+                    <pre><code>请分析以下需求，拆解成可执行的步骤：
+
+需求：[粘贴需求]
+
+输出：
+1. 技术方案
+2. 实现步骤
+3. 注意事项</code></pre>
+                    <p><strong>模板 2：代码审查</strong></p>
+                    <pre><code>请审查以下代码，找出问题和优化建议：
+
+代码：[粘贴代码]
+
+输出：问题列表 + 优化后的代码</code></pre>
+                    <p><strong>模板 3：学习新知识</strong></p>
+                    <pre><code>请解释以下概念，并给出代码示例：
+
+概念：[粘贴概念]
+语言：[你想用的语言]
+
+输出：
+1. 通俗解释
+2. 代码示例
+3. 常见用法</code></pre>
+                    <h4>📝 小作业</h4>
+                    <p>回顾 7 天内容，写下你的 AI 工作流计划。</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- 附赠资料 -->
+        <section class="content-section animate-fade-in animate-delay-3">
+            <h3>📦 附赠资料包（价值￥99）</h3>
+            <p style="color:var(--text-secondary);margin-bottom:20px">报名即送，开箱即用：</p>
+            <ul class="bonus-list">
+                <li><span class="bonus-icon">✅</span> 50+ Prompt模板合集</li>
+                <li><span class="bonus-icon">✅</span> Cursor快捷键速查表 + 配置清单</li>
+                <li><span class="bonus-icon">✅</span> 本地部署避坑指南</li>
+                <li><span class="bonus-icon">✅</span> AI代码审查清单</li>
+                <li><span class="bonus-icon">✅</span> 学习群加入方式</li>
+            </ul>
+        </section>
+
+        <!-- 你的角色转变 -->
+        <section class="content-section animate-fade-in animate-delay-3">
+            <h3>🔄 7天后，你的改变</h3>
+            <div class="highlight-cards">
+                <div class="highlight-card">
+                    <div class="hl-icon">✍️</div>
+                    <h4>独立使用AI工具编程</h4>
+                    <p>自如使用Cursor、Claude等工具辅助日常开发</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">💬</div>
+                    <h4>写出清晰的Prompt指令</h4>
+                    <p>用三要素框架写出高质量提示词，AI输出质量大幅提升</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">🐛</div>
+                    <h4>用AI调试和优化代码</h4>
+                    <p>快速定位Bug、审查代码质量、生成测试</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="hl-icon">🏠</div>
+                    <h4>选择合适的工具方案</h4>
+                    <p>云端vs本地，知道什么时候该用哪个</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section animate-fade-in animate-delay-4">
+            <h3>🚀 准备好开始了吗？</h3>
+            <p class="cta-price">7天系统课程 + 5份附赠资料，仅需 <strong>￥19.9</strong></p>
+            <p style="color:var(--text-muted);margin-bottom:24px;font-size:0.9rem">一顿饭的价格，换来一个AI时代的核心技能</p>
+            <a href="#" class="btn-cta">📩 立即报名参加</a>
+            <p style="margin-top:16px;font-size:0.82rem;color:var(--text-muted)">报名后请联系微信获取课程资料和学习群邀请</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="content-section animate-fade-in animate-delay-4">
+            <h3>❓ 常见问题</h3>
+            <div class="faq-item">
+                <h4>Q：完全零基础能学会吗？</h4>
+                <p>A：可以。训练营从Day 1的概念讲起，逐步上手。只要你会基本的电脑操作，就能跟上。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q：需要付费的工具吗？</h4>
+                <p>A：不需要。课程使用Cursor免费版或开源工具Continue.dev，本地部署用免费的Ollama。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q：每天需要学多久？</h4>
+                <p>A：每天约1小时。看教程+动手实操，7天即可完成全部内容。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q：课程内容会更新吗？</h4>
+                <p>A：会。一次购买终身可看，AI工具更新迭代快，课程内容也会持续跟进更新。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q：学完能达到什么水平？</h4>
+                <p>A：能够独立使用AI工具完成日常编程任务，包括写代码、调试、优化、审查。效率提升2-3倍。</p>
+            </div>
+        </section>
+
+        <!-- 下一步预告 -->
+        <section class="content-section animate-fade-in animate-delay-4" style="text-align:center">
+            <h3>🔮 学完还想进阶？</h3>
+            <p style="color:var(--text-secondary);margin-bottom:16px">训练营毕业后，推荐继续学习：</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                <div class="highlight-card" style="flex:1;min-width:200px;max-width:300px">
+                    <div class="hl-icon">🖥️</div>
+                    <h4>本地部署实战课</h4>
+                    <p>深入Ollama + 私有知识库搭建</p>
+                    <span style="display:inline-block;background:var(--primary);color:white;padding:4px 14px;border-radius:var(--radius-full);font-size:0.85rem;font-weight:600;margin-top:8px">￥99</span>
+                </div>
+                <div class="highlight-card" style="flex:1;min-width:200px;max-width:300px">
+                    <div class="hl-icon">🎯</div>
+                    <h4>Prompt工程进阶课</h4>
+                    <p>掌握更高级的Prompt技巧与框架</p>
+                    <span style="display:inline-block;background:var(--secondary);color:white;padding:4px 14px;border-radius:var(--radius-full);font-size:0.85rem;font-weight:600;margin-top:8px">即将上线</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 AI学习资源站 | <a href="https://github.com/zblnly/ai" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="返回顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "AI辅助编程7天训练营",
+        "description": "从零开始，7天学会AI辅助编程。系统课程+实战项目+附赠资料包。",
+        "provider": { "@type": "Organization", "name": "AI学习资源站" },
+        "offers": {
+            "@type": "Offer",
+            "price": "19.9",
+            "priceCurrency": "CNY"
+        }
+    }
+    </script>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
